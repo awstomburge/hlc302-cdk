@@ -17,4 +17,23 @@ pip list
 Follow instructions to upgrade pip  
 pip install -r requirements.txt  
 
+edit lambdas\connect-instance\connect-custom-resource.py on line 24 to change the Connect alias
+
 cdk deploy --profile <aws cli profile name>
+
+edit frontend-agent\src\AgentConfig.js with the proper values  
+
+edit frontend-customer\src\ConnectChatInterfaceConfig.js with the proper values  
+
+
+install, build, and start frontend-agent  
+
+npm install  
+npm run build  
+npm run start  
+
+install, build, and start frontend-customer  
+
+npm install  
+npm run build  
+npm run start  
