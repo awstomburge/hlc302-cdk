@@ -38,6 +38,12 @@ def create(event, context):
         Content=json.dumps(data)
     )
 
+    ssm_client.put_parameter(
+        Name='hlc302-flow-id',
+        Value=response['ContactFlowId'],
+        Type='String'
+    )
+
 @helper.update
 def update(event, context):
     logger.info("Got Update")

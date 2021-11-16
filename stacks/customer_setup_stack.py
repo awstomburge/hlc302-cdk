@@ -33,6 +33,12 @@ class CustomerStack(cdk.Stack):
             )
         )
 
+        start_chat_handler.role.add_managed_policy(
+            iam.ManagedPolicy.from_aws_managed_policy_name(
+                'AmazonSSMFullAccess'
+            )
+        )
+
         apigw_iam_role = iam.Role(self,
             id='CustomerApiGwRole',
             assumed_by=iam.ServicePrincipal(
@@ -128,5 +134,4 @@ class CustomerStack(cdk.Stack):
                 )
             )
         )
-
 

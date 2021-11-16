@@ -1,4 +1,5 @@
 var AWS = require('aws-sdk');
+var SSM = new AWS.SSM();
 AWS.config.update({region: process.env.REGION});
 var connect = new AWS.Connect();
 
@@ -15,17 +16,34 @@ exports.handler = (event, context, callback) => {
 };
 
 function startChatContact(body) {
-    var contactFlowId = "";
-    if(body.hasOwnProperty('ContactFlowId')){
-        contactFlowId = body["ContactFlowId"];
-    }
-    console.log("CF ID: " + contactFlowId);
+
+    var instanceParameter = {
+        "Name" : "hlc302-connect-instance-id"
+    };
+    responseFromSSM = await SSM.getParameter(instanceParameter).promise();
+    console.log('SUCCESS');
+    console.log(responseFromSSM);
+    var instanceId = responseFromSSM.Parameter.Value;
+
+    var flowParameter = {
+        "Name" : "hlc302-flow-id"
+    };
+    responseFromSSM = await SSM.getParameter(flowParameter).promise();
+    console.log('SUCCESS');
+    console.log(responseFromSSM);
+    var contactFlowId = responseFromSSM.Parameter.Value;
+
+    // var contactFlowId = "";
+    // if(body.hasOwnProperty('ContactFlowId')){
+    //     contactFlowId = body["ContactFlowId"];
+    // }
+    // console.log("CF ID: " + contactFlowId);
     
-    var instanceId = "";
-    if(body.hasOwnProperty('InstanceId')){
-        instanceId = body["InstanceId"];
-    }
-    console.log("Instance ID: " + instanceId);
+    // var instanceId = "";
+    // if(body.hasOwnProperty('InstanceId')){
+    //     instanceId = body["InstanceId"];
+    // }
+    // console.log("Instance ID: " + instanceId);
 
     return new Promise(function (resolve, reject) {
         var startChat = {

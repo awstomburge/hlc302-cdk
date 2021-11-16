@@ -15,7 +15,7 @@
             },
             "useDynamic":false,
             "queue":{
-               "id":"arn:aws:connect:us-east-1:785787308789:instance/a8a86cff-5706-4628-a5d7-3ef2698fa1fe/queue/225f3131-5dc5-4a7c-8055-1b90fabbc8b1",
+               "id":"arn:aws:connect:us-east-1:785787308789:instance/bf58876e-743d-4b30-be8a-202233b8a87e/queue/842c61df-0bb3-411f-b33f-83ae10ec1120",
                "text":"BasicQueue"
             }
          },
@@ -25,7 +25,7 @@
                "y":495
             },
             "contactFlow":{
-               "id":"arn:aws:connect:us-east-1:785787308789:instance/a8a86cff-5706-4628-a5d7-3ef2698fa1fe/contact-flow/61c4373a-d322-4292-b925-f293cf233a89",
+               "id":"arn:aws:connect:us-east-1:785787308789:instance/bf58876e-743d-4b30-be8a-202233b8a87e/contact-flow/5820095d-3ee0-48f6-935a-977b351207be",
                "text":"Default customer queue"
             },
             "customerOrAgent":true,
@@ -58,11 +58,11 @@
             },
             "conditionMetadata":[
                {
-                  "id":"a696f9c2-048f-4ffb-a9e1-2d390710dd4d",
+                  "id":"196fc1a8-15b4-4326-840d-0053d16b019d",
                   "value":"Video"
                },
                {
-                  "id":"e2cb27e5-6836-4803-8e8b-2f6d870640f8",
+                  "id":"d56ddc8c-71ee-4a37-a936-7d0108e55603",
                   "value":"Chat"
                }
             ],
@@ -79,6 +79,36 @@
             },
             "useDynamic":false
          },
+         "a3fed5f3-a5fb-4eec-8534-2cf40982bde4":{
+            "position":{
+               "x":887,
+               "y":57
+            },
+            "useDynamic":false,
+            "queue":{
+               "id":"arn:aws:connect:us-east-1:785787308789:instance/bf58876e-743d-4b30-be8a-202233b8a87e/queue/842c61df-0bb3-411f-b33f-83ae10ec1120",
+               "text":"BasicQueue"
+            }
+         },
+         "e5400ca1-9b31-4ec4-8e08-c5e14bd86ee1":{
+            "position":{
+               "x":1440,
+               "y":64
+            },
+            "useDynamic":false
+         },
+         "34d8adda-f9fc-4df9-98a5-9721d352ecc0":{
+            "position":{
+               "x":1180,
+               "y":65
+            },
+            "contactFlow":{
+               "id":"arn:aws:connect:us-east-1:785787308789:instance/bf58876e-743d-4b30-be8a-202233b8a87e/contact-flow/5820095d-3ee0-48f6-935a-977b351207be",
+               "text":"Default customer queue"
+            },
+            "customerOrAgent":true,
+            "useDynamic":false
+         },
          "7535999b-bd7d-4efe-aada-688ecc9a8e37":{
             "position":{
                "x":1314,
@@ -93,19 +123,6 @@
             },
             "useDynamic":false
          },
-         "4b1c4159-1f57-4570-b96f-363f4a8132d4":{
-            "position":{
-               "x":1923,
-               "y":496
-            }
-         },
-         "e5400ca1-9b31-4ec4-8e08-c5e14bd86ee1":{
-            "position":{
-               "x":1440,
-               "y":64
-            },
-            "useDynamic":false
-         },
          "78596bf3-a6bc-4efc-9741-44104789fb3e":{
             "position":{
                "x":1678,
@@ -113,28 +130,11 @@
             },
             "useDynamic":false
          },
-         "a3fed5f3-a5fb-4eec-8534-2cf40982bde4":{
+         "4b1c4159-1f57-4570-b96f-363f4a8132d4":{
             "position":{
-               "x":887,
-               "y":57
-            },
-            "useDynamic":false,
-            "queue":{
-               "id":"arn:aws:connect:us-east-1:785787308789:instance/a8a86cff-5706-4628-a5d7-3ef2698fa1fe/queue/225f3131-5dc5-4a7c-8055-1b90fabbc8b1",
-               "text":"BasicQueue"
+               "x":1923,
+               "y":496
             }
-         },
-         "34d8adda-f9fc-4df9-98a5-9721d352ecc0":{
-            "position":{
-               "x":1180,
-               "y":65
-            },
-            "contactFlow":{
-               "id":"arn:aws:connect:us-east-1:785787308789:instance/a8a86cff-5706-4628-a5d7-3ef2698fa1fe/contact-flow/61c4373a-d322-4292-b925-f293cf233a89",
-               "text":"Default customer queue"
-            },
-            "customerOrAgent":true,
-            "useDynamic":false
          }
       }
    },
@@ -142,7 +142,7 @@
       {
          "Identifier":"80d53f37-f69a-4726-a8e5-939fc6d59c2d",
          "Parameters":{
-            "QueueId":"arn:aws:connect:us-east-1:785787308789:instance/a8a86cff-5706-4628-a5d7-3ef2698fa1fe/queue/225f3131-5dc5-4a7c-8055-1b90fabbc8b1"
+            "QueueId":"arn:aws:connect:us-east-1:785787308789:instance/bf58876e-743d-4b30-be8a-202233b8a87e/queue/842c61df-0bb3-411f-b33f-83ae10ec1120"
          },
          "Transitions":{
             "NextAction":"ab4f6f1d-6a40-46bf-a321-a73b9056544d",
@@ -162,7 +162,7 @@
          "Identifier":"ab4f6f1d-6a40-46bf-a321-a73b9056544d",
          "Parameters":{
             "EventHooks":{
-               "CustomerQueue":"arn:aws:connect:us-east-1:785787308789:instance/a8a86cff-5706-4628-a5d7-3ef2698fa1fe/contact-flow/61c4373a-d322-4292-b925-f293cf233a89"
+               "CustomerQueue":"arn:aws:connect:us-east-1:785787308789:instance/bf58876e-743d-4b30-be8a-202233b8a87e/contact-flow/5820095d-3ee0-48f6-935a-977b351207be"
             }
          },
          "Transitions":{
@@ -293,6 +293,66 @@
          "Type":"MessageParticipant"
       },
       {
+         "Identifier":"a3fed5f3-a5fb-4eec-8534-2cf40982bde4",
+         "Parameters":{
+            "QueueId":"arn:aws:connect:us-east-1:785787308789:instance/bf58876e-743d-4b30-be8a-202233b8a87e/queue/842c61df-0bb3-411f-b33f-83ae10ec1120"
+         },
+         "Transitions":{
+            "NextAction":"34d8adda-f9fc-4df9-98a5-9721d352ecc0",
+            "Errors":[
+               {
+                  "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
+                  "ErrorType":"NoMatchingError"
+               }
+            ],
+            "Conditions":[
+               
+            ]
+         },
+         "Type":"UpdateContactTargetQueue"
+      },
+      {
+         "Identifier":"e5400ca1-9b31-4ec4-8e08-c5e14bd86ee1",
+         "Transitions":{
+            "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
+            "Errors":[
+               {
+                  "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
+                  "ErrorType":"NoMatchingError"
+               },
+               {
+                  "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
+                  "ErrorType":"QueueAtCapacity"
+               }
+            ],
+            "Conditions":[
+               
+            ]
+         },
+         "Type":"TransferContactToQueue"
+      },
+      {
+         "Identifier":"34d8adda-f9fc-4df9-98a5-9721d352ecc0",
+         "Parameters":{
+            "EventHooks":{
+               "CustomerQueue":"arn:aws:connect:us-east-1:785787308789:instance/bf58876e-743d-4b30-be8a-202233b8a87e/contact-flow/5820095d-3ee0-48f6-935a-977b351207be"
+            }
+         },
+         "Transitions":{
+            "NextAction":"e5400ca1-9b31-4ec4-8e08-c5e14bd86ee1",
+            "Errors":[
+               {
+                  "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
+                  "ErrorType":"NoMatchingError"
+               }
+            ],
+            "Conditions":[
+               
+            ]
+         },
+         "Type":"UpdateContactEventHooks"
+      },
+      {
          "Identifier":"7535999b-bd7d-4efe-aada-688ecc9a8e37",
          "Parameters":{
             "Text":"There was an error transferring you to an agent."
@@ -325,36 +385,6 @@
          "Type":"MessageParticipant"
       },
       {
-         "Identifier":"4b1c4159-1f57-4570-b96f-363f4a8132d4",
-         "Type":"DisconnectParticipant",
-         "Parameters":{
-            
-         },
-         "Transitions":{
-            
-         }
-      },
-      {
-         "Identifier":"e5400ca1-9b31-4ec4-8e08-c5e14bd86ee1",
-         "Transitions":{
-            "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
-            "Errors":[
-               {
-                  "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
-                  "ErrorType":"NoMatchingError"
-               },
-               {
-                  "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
-                  "ErrorType":"QueueAtCapacity"
-               }
-            ],
-            "Conditions":[
-               
-            ]
-         },
-         "Type":"TransferContactToQueue"
-      },
-      {
          "Identifier":"78596bf3-a6bc-4efc-9741-44104789fb3e",
          "Parameters":{
             "Text":"There was an error transferring you to an agent."
@@ -371,44 +401,14 @@
          "Type":"MessageParticipant"
       },
       {
-         "Identifier":"a3fed5f3-a5fb-4eec-8534-2cf40982bde4",
+         "Identifier":"4b1c4159-1f57-4570-b96f-363f4a8132d4",
+         "Type":"DisconnectParticipant",
          "Parameters":{
-            "QueueId":"arn:aws:connect:us-east-1:785787308789:instance/a8a86cff-5706-4628-a5d7-3ef2698fa1fe/queue/225f3131-5dc5-4a7c-8055-1b90fabbc8b1"
+            
          },
          "Transitions":{
-            "NextAction":"34d8adda-f9fc-4df9-98a5-9721d352ecc0",
-            "Errors":[
-               {
-                  "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
-                  "ErrorType":"NoMatchingError"
-               }
-            ],
-            "Conditions":[
-               
-            ]
-         },
-         "Type":"UpdateContactTargetQueue"
-      },
-      {
-         "Identifier":"34d8adda-f9fc-4df9-98a5-9721d352ecc0",
-         "Parameters":{
-            "EventHooks":{
-               "CustomerQueue":"arn:aws:connect:us-east-1:785787308789:instance/a8a86cff-5706-4628-a5d7-3ef2698fa1fe/contact-flow/61c4373a-d322-4292-b925-f293cf233a89"
-            }
-         },
-         "Transitions":{
-            "NextAction":"e5400ca1-9b31-4ec4-8e08-c5e14bd86ee1",
-            "Errors":[
-               {
-                  "NextAction":"78596bf3-a6bc-4efc-9741-44104789fb3e",
-                  "ErrorType":"NoMatchingError"
-               }
-            ],
-            "Conditions":[
-               
-            ]
-         },
-         "Type":"UpdateContactEventHooks"
+            
+         }
       }
    ]
 }

@@ -3,14 +3,14 @@
 
 Install NodeJS  
 Install Python <=3.7  
-Install CDK  
+Install CDK (npm install -g aws-cdk)
 Install AWS CLI  
 
 Configure AWS CLI profile with full access for Connect, Lex, and SSM at the minimum.  
 
 Create a python virtual env in project directory.  
 
-cd hlc302  
+cd hlc302-cdk  
 python -m venv hlc302  
 hlc302\Scripts\activate  
 pip list  
@@ -27,12 +27,14 @@ edit frontend-customer\src\ConnectChatInterfaceConfig.js with the proper values
 
 install, build, and start frontend-agent  
 
+cd frontend-agent  
 npm install  
 npm run build  
 npm run start  
 
 install, build, and start frontend-customer  
 
+cd frontend-customer  
 npm install  
 npm run build  
 npm run start  
