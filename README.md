@@ -3,7 +3,7 @@
 
 Install NodeJS  
 Install Python <=3.7  
-Install CDK (npm install -g aws-cdk)
+Install CDK (npm install -g aws-cdk)  
 Install AWS CLI  
 
 Configure AWS CLI profile with full access for Connect, Lex, and SSM at the minimum.  
