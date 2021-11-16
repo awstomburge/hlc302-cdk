@@ -15,4 +15,4 @@ old
 
 # web excludes
 frontend-agent/node_modules
-frontend-agent/public
+frontend-customer/node_modules

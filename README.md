@@ -25,7 +25,6 @@ edit frontend-agent\src\AgentConfig.js with the proper values
 
 edit frontend-customer\src\ConnectChatInterfaceConfig.js with the proper values  
 
-
 install, build, and start frontend-agent  
 
 npm install  

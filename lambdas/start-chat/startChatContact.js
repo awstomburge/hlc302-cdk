@@ -57,7 +57,7 @@ function buildSuccessfulResponse(result) {
     const response = {
         statusCode: 200,
         headers: {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "http://localhost:9000",
             'Content-Type': 'application/json',
             'Access-Control-Allow-Credentials' : true,
             'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'
@@ -74,7 +74,7 @@ function buildResponseFailed(err) {
     const response = {
         statusCode: 500,
         headers: {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "http://localhost:9000",
             'Content-Type': 'application/json',
             'Access-Control-Allow-Credentials' : true,
             'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'
