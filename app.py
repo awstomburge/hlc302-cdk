@@ -10,6 +10,8 @@ from aws_cdk import core as cdk
 # Stack Imports
 # **********************************************************************************************************
 from stacks.custom_resources import CustomResourceStack
+from stacks.agent_setup_stack import AgentStack
+from stacks.customer_setup_stack import CustomerStack
 # **********************************************************************************************************
 # Initilize App
 # **********************************************************************************************************
@@ -19,6 +21,10 @@ app = cdk.App()
 # Stacks
 # **********************************************************************************************************
 cr_stack = CustomResourceStack(app, 'hlc302-cr')
+
+agent_stack = AgentStack(app, 'hlc302-agent')
+
+customer_stack = CustomerStack(app, 'hlc302-customer')
 # **********************************************************************************************************
 # Synthesize App
 # **********************************************************************************************************

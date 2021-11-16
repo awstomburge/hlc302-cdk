@@ -12,3 +12,7 @@ cdk.out
 hlc302
 old
 *.bat
+
+# web excludes
+frontend-agent/node_modules
+frontend-agent/public
