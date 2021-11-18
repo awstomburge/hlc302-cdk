@@ -8,7 +8,7 @@ Install the following applications based on your system:
 - AWS CLI. Configure the CLI to have full access to Amazon Connect, Amazon Lex, ans AWS Systems Manager. To make this easy, you can assign the user the CLI is using with Adminstrator permissions.
 
 Begin deploying the code:
-- cd hlc302-cdk  
+- `cd hlc302-cdk`  
 - Create a virtual environment for python: `python -m venv hlc302`
 - To activate this environment:
   - If on Windows, run `hlc302\Scripts\activate`
