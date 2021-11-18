@@ -35,14 +35,18 @@ Edit `frontend-customer\src\ConnectChatInterfaceConfig.js` with the proper value
 
 install, build, and start frontend-agent  
 
+```
 cd frontend-agent  
 npm install --force
 npm run build  
 npm run start  
+```
 
 install, build, and start frontend-customer  
 
+```
 cd frontend-customer  
 npm install --force
 npm run build  
 npm run start  
+```
