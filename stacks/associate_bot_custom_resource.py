@@ -1,3 +1,4 @@
+import platform
 from aws_cdk import core as cdk
 from aws_cdk.custom_resources import Provider
 import aws_cdk.aws_iam as iam
@@ -10,10 +11,15 @@ class AssociateBotResource(cdk.Construct):
 
         # The code that defines your stack goes here
 
+        if platform.system() == 'Windows':
+            bot_code = 'lambdas\\associate-bot'
+        else:
+            bot_code = 'lambdas/associate-bot'
+
         associate_bot_handler = aws_lambda.Function(self,
             id='AssociateBotLambda',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
-            code=aws_lambda.Code.from_asset('lambdas\\associate-bot'),
+            code=aws_lambda.Code.from_asset(bot_code),
             handler='associate-bot-custom-resource.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )

@@ -1,3 +1,4 @@
+import platform
 from aws_cdk import core as cdk
 from aws_cdk.custom_resources import Provider
 import aws_cdk.aws_iam as iam
@@ -10,10 +11,15 @@ class CreateUserResource(cdk.Construct):
 
         # The code that defines your stack goes here
 
+        if platform.system() == 'Windows':
+            user_code = 'lambdas\create-user'
+        else:
+            user_code = 'lambdas/create-user'
+
         create_user_handler = aws_lambda.Function(self,
             id='CreateUserLambda',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
-            code=aws_lambda.Code.from_asset('lambdas\create-user'),
+            code=aws_lambda.Code.from_asset(user_code),
             handler='create-user-custom-resource.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )

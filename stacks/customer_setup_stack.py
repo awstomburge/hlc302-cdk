@@ -1,3 +1,4 @@
+import platform
 from typing_extensions import runtime
 from aws_cdk import core as cdk
 import aws_cdk.aws_apigateway as apigw
@@ -9,17 +10,24 @@ class CustomerStack(cdk.Stack):
     def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
+        if platform.system() == 'Windows':
+            chat_sdk = 'lambdas\chat-sdk\ChatSDK.zip'
+            chat_code = 'lambdas\start-chat'
+        else:
+            chat_sdk = 'lambdas/chat-sdk/ChatSDK.zip'
+            chat_code = 'lambdas/start-chat'
+
         chat_sdk_layer = aws_lambda.LayerVersion(self,
             id='ChatSdkLayer',
             compatible_runtimes=[aws_lambda.Runtime.NODEJS_12_X],
             compatible_architectures=[aws_lambda.Architecture.X86_64],
             description='The AWS SDK including Amazon Connect Chat APIs.',
-            code=aws_lambda.Code.from_asset('lambdas\chat-sdk\ChatSDK.zip')
+            code=aws_lambda.Code.from_asset(chat_sdk)
         )
 
         start_chat_handler = aws_lambda.Function(self,
             id='StartChatLambda',
-            code=aws_lambda.Code.from_asset('lambdas\start-chat'),
+            code=aws_lambda.Code.from_asset(chat_code),
             runtime=aws_lambda.Runtime.NODEJS_12_X,
             handler='startChatContact.handler',
             layers=[chat_sdk_layer],

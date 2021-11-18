@@ -1,3 +1,4 @@
+import platform
 from aws_cdk import core as cdk
 from aws_cdk.custom_resources import Provider
 import aws_cdk.aws_iam as iam
@@ -10,10 +11,15 @@ class ConnectInstanceResource(cdk.Construct):
 
         # The code that defines your stack goes here
 
+        if platform.system() == 'Windows':
+            connect_code = 'lambdas\connect-instance'
+        else:
+            connect_code = 'lambdas/connect-instance'
+
         connect_instance_handler = aws_lambda.Function(self,
             id='ConnectInstanceLambda',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
-            code=aws_lambda.Code.from_asset('lambdas\connect-instance'),
+            code=aws_lambda.Code.from_asset(connect_code),
             handler='connect-custom-resource.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )

@@ -1,3 +1,4 @@
+import platform
 from aws_cdk import core as cdk
 import aws_cdk.aws_apigateway as apigw
 import aws_cdk.aws_iam as iam
@@ -8,10 +9,17 @@ class AgentStack(cdk.Stack):
     def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
+        if platform.system() == 'Windows':
+            create_code = 'lambdas\create-chime-meeting'
+            delete_code = 'lambdas\delete-chime-meeting'
+        else:
+            create_code = 'lambdas/create-chime-meeting'
+            delete_code = 'lambdas/delete-chime-meeting'
+
         create_chime_meeting_handler = aws_lambda.Function(self,
             id='CreateChimeMeetingLambda',
             runtime=aws_lambda.Runtime.NODEJS_12_X,
-            code=aws_lambda.Code.from_asset('lambdas\create-chime-meeting'),
+            code=aws_lambda.Code.from_asset(create_code),
             handler='index.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )
@@ -25,7 +33,7 @@ class AgentStack(cdk.Stack):
         delete_chime_meeting_handler = aws_lambda.Function(self,
             id='DeleteChimeMeetingLambda',
             runtime=aws_lambda.Runtime.NODEJS_12_X,
-            code=aws_lambda.Code.from_asset('lambdas\delete-chime-meeting'),
+            code=aws_lambda.Code.from_asset(delete_code),
             handler='index.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )
