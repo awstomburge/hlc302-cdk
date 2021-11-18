@@ -14,12 +14,12 @@ class CustomerStack(cdk.Stack):
             compatible_runtimes=[aws_lambda.Runtime.NODEJS_12_X],
             compatible_architectures=[aws_lambda.Architecture.X86_64],
             description='The AWS SDK including Amazon Connect Chat APIs.',
-            code=aws_lambda.Code.from_asset('lambdas\chat-sdk\ChatSDK.zip')
+            code=aws_lambda.Code.from_asset('lambdas/chat-sdk/ChatSDK.zip')
         )
 
         start_chat_handler = aws_lambda.Function(self,
             id='StartChatLambda',
-            code=aws_lambda.Code.from_asset('lambdas\start-chat'),
+            code=aws_lambda.Code.from_asset('lambdas/start-chat'),
             runtime=aws_lambda.Runtime.NODEJS_12_X,
             handler='startChatContact.handler',
             layers=[chat_sdk_layer],

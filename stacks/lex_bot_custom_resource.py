@@ -13,7 +13,7 @@ class LexBotResource(cdk.Construct):
         lex_bot_handler = aws_lambda.Function(self,
             id='LexBotLambda',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
-            code=aws_lambda.Code.from_asset('lambdas\lex-bot'),
+            code=aws_lambda.Code.from_asset('lambdas/lex-bot'),
             handler='lex-bot-custom-resource.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )

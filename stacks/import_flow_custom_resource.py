@@ -13,7 +13,7 @@ class ImportFlowResource(cdk.Construct):
         import_flow_handler = aws_lambda.Function(self,
             id='ImportFlowLambda',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
-            code=aws_lambda.Code.from_asset('lambdas\import-flow'),
+            code=aws_lambda.Code.from_asset('lambdas/import-flow'),
             handler='import-flow-custom-resource.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )

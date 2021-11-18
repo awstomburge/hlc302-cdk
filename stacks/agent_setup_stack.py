@@ -11,7 +11,7 @@ class AgentStack(cdk.Stack):
         create_chime_meeting_handler = aws_lambda.Function(self,
             id='CreateChimeMeetingLambda',
             runtime=aws_lambda.Runtime.NODEJS_12_X,
-            code=aws_lambda.Code.from_asset('lambdas\create-chime-meeting'),
+            code=aws_lambda.Code.from_asset('lambdas/create-chime-meeting'),
             handler='index.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )
@@ -25,7 +25,7 @@ class AgentStack(cdk.Stack):
         delete_chime_meeting_handler = aws_lambda.Function(self,
             id='DeleteChimeMeetingLambda',
             runtime=aws_lambda.Runtime.NODEJS_12_X,
-            code=aws_lambda.Code.from_asset('lambdas\delete-chime-meeting'),
+            code=aws_lambda.Code.from_asset('lambdas/delete-chime-meeting'),
             handler='index.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )

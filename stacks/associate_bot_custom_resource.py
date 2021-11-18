@@ -13,7 +13,7 @@ class AssociateBotResource(cdk.Construct):
         associate_bot_handler = aws_lambda.Function(self,
             id='AssociateBotLambda',
             runtime=aws_lambda.Runtime.PYTHON_3_7,
-            code=aws_lambda.Code.from_asset('lambdas\\associate-bot'),
+            code=aws_lambda.Code.from_asset('lambdas/associate-bot'),
             handler='associate-bot-custom-resource.lambda_handler',
             timeout=cdk.Duration.seconds(90)
         )
