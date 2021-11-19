@@ -20,8 +20,8 @@ class CustomResourceStack(cdk.Stack):
         associate_bot.node.add_dependency(lex_bot)
         associate_bot.node.add_dependency(connect_instance)
 
-        import_flow = ImportFlowResource(self, 'IF')
-        import_flow.node.add_dependency(connect_instance)
+        # import_flow = ImportFlowResource(self, 'IF')
+        # import_flow.node.add_dependency(connect_instance)
 
         create_user = CreateUserResource(self, 'CU')
         create_user.node.add_dependency(connect_instance)
