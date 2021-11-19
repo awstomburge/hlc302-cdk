@@ -16,3 +16,4 @@ old
 # web excludes
 frontend-agent/node_modules
 frontend-customer/node_modules
+.DS_Store
