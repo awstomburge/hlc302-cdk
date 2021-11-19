@@ -27,12 +27,7 @@ Once the deploy completes, edit `frontend-agent\src\AgentConfig.js` with the pro
 - The value for the `<INSTANCE-ALIAS>` is the value you entered for the Amazon Connect alias
 - The values for the `INVOKE_URL`, `ACCESS_KEY`, and `SECRET_KEY` are most easily seen by navigating to the CloudFormation console and looking at the **Outputs** tab for the **hlc302-agent** stack
 
-Edit `frontend-customer\src\ConnectChatInterfaceConfig.js` with the proper values  
-- The value for `API_GATEWAY_ENDPOINT` is found by looking at the **Outputs** tab for the **hlc302-customer** stack
-- Navigate to Systems Manager and click on the **Parameter Store** tab. Click on the parameter called **hlc302-connect-instance-id**. The value you see is the value you should provide for the `INSTANCE_ID` variable. The value should have the pattern `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
-- Find the parameter called **hlc302--tbd**. The value of this should be the value for the `CONTACT_FLOW_ID` variable.
-
-install, build, and start frontend-agent  
+Install, build, and start frontend-agent  
 
 ```
 cd frontend-agent  
@@ -41,7 +36,12 @@ npm run build
 npm run start  
 ```
 
-install, build, and start frontend-customer  
+Edit `frontend-customer\src\ConnectChatInterfaceConfig.js` with the proper values  
+- The value for `API_GATEWAY_ENDPOINT` is found by looking at the **Outputs** tab for the **hlc302-customer** stack
+- Navigate to Systems Manager and click on the **Parameter Store** tab. Click on the parameter called **hlc302-connect-instance-id**. The value you see is the value you should provide for the `INSTANCE_ID` variable. The value should have the pattern `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
+- Find the parameter called **hlc302--tbd**. The value of this should be the value for the `CONTACT_FLOW_ID` variable.
+
+Install, build, and start frontend-customer  
 
 ```
 cd frontend-customer  
