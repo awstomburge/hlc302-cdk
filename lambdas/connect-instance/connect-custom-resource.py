@@ -21,7 +21,7 @@ connect_client = boto3.client('connect')
 ssm_client = boto3.client('ssm')
 
 # connect instance alias name
-instance_alias = 'hlc302-testing1' # TODO CHANGE ME
+instance_alias = '<CHANGE_YOUR_INSTANCE_ALIAS_HERE>' # TODO CHANGE ME
 
 @helper.create
 def create(event, context):
