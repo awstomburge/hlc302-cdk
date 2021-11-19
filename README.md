@@ -15,7 +15,7 @@ Begin deploying the code:
   - If on Mac/Linux, run `source hlc302/bin/activate`
 - Upgrade pip via `pip install --upgrade pip`
 - Run `pip install -r requirements.txt`
-- Edit line 24 of lambdas\connect-instance\connect-custom-resource.py. Change the Amazon Connect alias to be something unique.  
+- Edit line 24 of `lambdas\connect-instance\connect-custom-resource.py`. Change the Amazon Connect alias to be something unique.  
 
 If you've never deployed the AWS CDK before, you must first bootstrap it:
 - `cdk bootstrap aws://<YOUR_ACCOUNT_ID>/<CURRENT_REGION>`
