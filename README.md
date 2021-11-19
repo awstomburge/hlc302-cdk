@@ -21,7 +21,7 @@ If you've never deployed the AWS CDK before, you must first bootstrap it:
 - `cdk bootstrap aws://<YOUR_ACCOUNT_ID>/<CURRENT_REGION>`
 
 Once the bootstrap completes, deploy the code:
-- `cdk deploy --all --profile <AWS_PROFILE_NAME`
+- `cdk deploy --all --profile <AWS_PROFILE_NAME>`
 
 Once the deploy completes, edit `frontend-agent\src\AgentConfig.js` with the proper values. 
 - The value for the `<INSTANCE-ALIAS>` is the value you entered for the Amazon Connect alias
@@ -34,14 +34,18 @@ Edit `frontend-customer\src\ConnectChatInterfaceConfig.js` with the proper value
 
 install, build, and start frontend-agent  
 
+```
 cd frontend-agent  
 npm install --force
 npm run build  
 npm run start  
+```
 
 install, build, and start frontend-customer  
 
+```
 cd frontend-customer  
 npm install --force
 npm run build  
 npm run start  
+```
