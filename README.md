@@ -2,10 +2,10 @@
 # HLC302 Reinvent Builders Session
 
 Install the following applications based on your system:
-- NodeJS  
-- Python <=3.7  
-- AWS CDK (`npm install -g aws-cdk`)  
-- AWS CLI. Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Systems Manager. To make this easy, you can assign the user the CLI is using with Adminstrator permissions.
+- [NodeJS](https://nodejs.org/en/download/)
+- [Python <=3.7](https://www.python.org/downloads/release/python-3614/)  
+- [AWS CDK (`npm install -g aws-cdk`)](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_install)
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Systems Manager. To make this easy, you can assign the user the CLI is using with Adminstrator permissions.
 
 Begin deploying the code:
 - cd hlc302-cdk  
