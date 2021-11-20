@@ -34,7 +34,7 @@ class AgentStack(cdk.Stack):
             id='DeleteChimeMeetingLambda',
             runtime=aws_lambda.Runtime.NODEJS_12_X,
             code=aws_lambda.Code.from_asset(delete_code),
-            handler='index.lambda_handler',
+            handler='index.handler',
             timeout=cdk.Duration.seconds(90)
         )
 
