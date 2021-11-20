@@ -20,7 +20,7 @@ class AgentStack(cdk.Stack):
             id='CreateChimeMeetingLambda',
             runtime=aws_lambda.Runtime.NODEJS_12_X,
             code=aws_lambda.Code.from_asset(create_code),
-            handler='index.lambda_handler',
+            handler='index.handler',
             timeout=cdk.Duration.seconds(90)
         )
 
