@@ -21,7 +21,7 @@ class ConnectInstanceResource(cdk.Construct):
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             code=aws_lambda.Code.from_asset(connect_code),
             handler='connect-custom-resource.lambda_handler',
-            timeout=cdk.Duration.seconds(90)
+            timeout=cdk.Duration.seconds(125)
         )
 
         connect_instance_handler.role.add_managed_policy(

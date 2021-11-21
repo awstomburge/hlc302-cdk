@@ -17,18 +17,15 @@ Begin deploying the code:
   - If on Mac/Linux, run `source hlc302/bin/activate`
 - Upgrade pip via `pip install --upgrade pip`
 - Run `pip install -r requirements.txt`
-- Edit line 24 of `lambdas\connect-instance\connect-custom-resource.py`. Change the Amazon Connect alias to be something unique. **If you don't make this change, your install will fail**.
 
 If you've never deployed the AWS CDK before, you must first bootstrap it:
 - `cdk bootstrap aws://<YOUR_ACCOUNT_ID>/<CURRENT_REGION>`
 
 Once the bootstrap completes, deploy the code:
-- `cdk deploy --all --profile <AWS_PROFILE_NAME>`
+- `cdk deploy --all --profile <AWS_PROFILE_NAME> -O frontend-agent/src/cdk-outputs.json`
 
-Once the deploy completes, edit `frontend-agent\src\AgentConfig.js` with the proper values. 
-- The value for the `<INSTANCE-ALIAS>` is the value you entered for the Amazon Connect alias
-- The values for the `INVOKE_URL`, `ACCESS_KEY`, and `SECRET_KEY` are most easily seen by navigating to the CloudFormation console and looking at the **Outputs** tab for the **hlc302-agent** stack
-- Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. 
+Once the deploy completes, follow the steps below. 
+- Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with reinvent2021. 
   - From the left navigation, click on **Contact Flows**. Under the **Amazon Lex** section, select the Lambda function called `StartVideoCall(Classic)` in the **Bot** box. Click the button that says **+ Add Amazon Lex Bot**. 
   - From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8080`. Click the **Add domain** button to save the change.
 - Now click on the Amazon Connect **Access URL**. In the Amazon Connect console that appears, hover over the **Routing** icon and select **Contact flows**. 
@@ -50,7 +47,7 @@ npm run start
 ```
 
 Edit `frontend-customer\src\ConnectChatInterfaceConfig.js` with the proper values  
-- The value for `API_GATEWAY_ENDPOINT` is found by looking at the **Outputs** tab for the **hlc302-customer** stack
+- The value for `API_GATEWAY_ENDPOINT` is found by looking at `frontend-agent/src/cdk-outputs.json`
 - Navigate to Systems Manager and click on the **Parameter Store** tab. Click on the parameter called **hlc302-connect-instance-id**. The value you see is the value you should provide for the `INSTANCE_ID` variable. The value should have the pattern `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
 - The value for `CONTACT_FLOW_ID` is the **Flow ID** that you copied in saved in Parameter Store.
 

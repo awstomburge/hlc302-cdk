@@ -1,13 +1,14 @@
-  
-export const AGENT_CCP_URL = 'https://<INSTANCE-ALIAS>.my.connect.aws/connect/ccp-v2/chat';
+import cdkExports from './cdk-outputs.json';
 
-export const AWS_REGION = 'us-east-1';
+export const AGENT_CCP_URL = 'https://' + cdkExports.hlc302Customer.InstanceId + '.my.connect.aws/connect/ccp-v2/chat';
+
+export const AWS_REGION = cdkExports.hlc302Agent.Region;
 
 // Check the invokeURL under the ChimeConnectIntegrationDemo CF template output tab
-export const INVOKE_URL = 'https://<APIGW-ID>.execute-api.us-east-1.amazonaws.com/prod/';
+export const INVOKE_URL = cdkExports.hlc302Agent.ApiGateway;
 
 // Check the ChimeConnectDemoUserAccessKey under the ChimeConnectIntegrationDemo CF template output tab
-export const ACCESS_KEY = '<USER-ACCESS-KEY';
+export const ACCESS_KEY = cdkExports.hlc302Agent.ChimeDemoUserAccessKey;
 
 // Check the ChimeConnectDemoUserSecretKey under the ChimeConnectIntegrationDemo CF template output tab 
-export const SECRET_KEY = '<USER-SECRET-KEY';
+export const SECRET_KEY = cdkExports.hlc302Agent.ChimeDemoUserSecretKey;

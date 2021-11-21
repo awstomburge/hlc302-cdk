@@ -21,7 +21,7 @@ class CreateUserResource(cdk.Construct):
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             code=aws_lambda.Code.from_asset(user_code),
             handler='create-user-custom-resource.lambda_handler',
-            timeout=cdk.Duration.seconds(90)
+            timeout=cdk.Duration.seconds(160)
         )
 
         create_user_handler.role.add_managed_policy(
