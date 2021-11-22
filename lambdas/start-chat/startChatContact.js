@@ -1,50 +1,31 @@
 var AWS = require('aws-sdk');
-var SSM = new AWS.SSM();
 AWS.config.update({region: process.env.REGION});
 var connect = new AWS.Connect();
-
-exports.handler = (event, context, callback) => {
+var SSM = new AWS.SSM();
+​
+exports.handler = async (event, context, callback) => {
     console.log("Received event: " + JSON.stringify(event));
     var body = JSON.parse(event["body"]);
-
-    startChatContact(body).then((startChatResult) => {
+    
+    var responseFromSSM = await SSM.getParameter({"Name" : "hlc302-connect-instance-id"}).promise();
+    var instance_id = responseFromSSM.Parameter.Value;
+    console.log(instance_id);
+    
+    responseFromSSM = await SSM.getParameter({"Name" : "hlc302-flow-id"}).promise();
+    var flow_parameter = responseFromSSM.Parameter.Value;
+    console.log(flow_parameter);
+​
+    startChatContact(body, instance_id, flow_parameter).then((startChatResult) => {
         callback(null, buildSuccessfulResponse(startChatResult));
     }).catch((err) => {
         console.log("caught error " + err);
         callback(null, buildResponseFailed(err));
     });
 };
-
-function startChatContact(body) {
-
-    var instanceParameter = {
-        "Name" : "hlc302-connect-instance-id"
-    };
-    responseFromSSM = await SSM.getParameter(instanceParameter).promise();
-    console.log('SUCCESS');
-    console.log(responseFromSSM);
-    var instanceId = responseFromSSM.Parameter.Value;
-
-    var flowParameter = {
-        "Name" : "hlc302-flow-id"
-    };
-    responseFromSSM = await SSM.getParameter(flowParameter).promise();
-    console.log('SUCCESS');
-    console.log(responseFromSSM);
-    var contactFlowId = responseFromSSM.Parameter.Value;
-
-    // var contactFlowId = "";
-    // if(body.hasOwnProperty('ContactFlowId')){
-    //     contactFlowId = body["ContactFlowId"];
-    // }
-    // console.log("CF ID: " + contactFlowId);
-    
-    // var instanceId = "";
-    // if(body.hasOwnProperty('InstanceId')){
-    //     instanceId = body["InstanceId"];
-    // }
-    // console.log("Instance ID: " + instanceId);
-
+​
+​
+function startChatContact(body, instanceId, contactFlowId) {
+​
     return new Promise(function (resolve, reject) {
         var startChat = {
             "InstanceId": instanceId == "" ? process.env.INSTANCE_ID : instanceId,
@@ -56,7 +37,7 @@ function startChatContact(body) {
                 "DisplayName": body["ParticipantDetails"]["DisplayName"]
             }
         };
-
+​
         connect.startChatContact(startChat, function(err, data) {
             if (err) {
                 console.log("Error starting the chat.");
@@ -67,10 +48,10 @@ function startChatContact(body) {
                 resolve(data);
             }
         });
-
+​
     });
 }
-
+​
 function buildSuccessfulResponse(result) {
     const response = {
         statusCode: 200,
@@ -87,7 +68,7 @@ function buildSuccessfulResponse(result) {
     console.log("RESPONSE" + JSON.stringify(response));
     return response;
 }
-
+​
 function buildResponseFailed(err) {
     const response = {
         statusCode: 500,
