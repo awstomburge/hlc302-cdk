@@ -58,6 +58,11 @@ npm run build
 npm run start  
 ```
 
+Once the Amazon Connect chat screen appears, change your status to **Available** (upper left corner).
+
+![Amazon Connect Chat Interface](images/connect-chat.png)
+
+
 Edit `frontend-customer\src\ConnectChatInterfaceConfig.js` with the proper values  
 - The value for `API_GATEWAY_ENDPOINT` is found by looking at `frontend-agent/src/cdk-outputs.json`
 - Navigate to Systems Manager and click on the **Parameter Store** tab. Click on the parameter called **hlc302-connect-instance-id**. The value you see is the value you should provide for the `INSTANCE_ID` variable. The value should have the pattern `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
