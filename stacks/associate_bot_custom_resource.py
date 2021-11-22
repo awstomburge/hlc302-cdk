@@ -21,7 +21,7 @@ class AssociateBotResource(cdk.Construct):
             runtime=aws_lambda.Runtime.PYTHON_3_7,
             code=aws_lambda.Code.from_asset(bot_code),
             handler='associate-bot-custom-resource.lambda_handler',
-            timeout=cdk.Duration.seconds(90)
+            timeout=cdk.Duration.seconds(120)
         )
 
         associate_bot_handler.role.add_managed_policy(
