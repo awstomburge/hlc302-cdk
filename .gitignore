@@ -15,6 +15,7 @@ old
 
 # web excludes
 frontend-agent/node_modules
+frontend-agent/src/cdk-outputs.json
 frontend-customer/node_modules
 .DS_Store
 .vscode

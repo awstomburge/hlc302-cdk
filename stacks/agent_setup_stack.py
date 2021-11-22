@@ -171,7 +171,7 @@ class AgentStack(cdk.Stack):
             export_name='ApiGateway'
         )
         
-        chime_demo_user_secret = cdk.CfnOutput(self,
+        chime_region = cdk.CfnOutput(self,
             id='Region',
             value=self.region,
             export_name='Region'
