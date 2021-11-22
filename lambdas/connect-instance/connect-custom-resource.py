@@ -44,7 +44,6 @@ def create(event, context):
         InboundCallsEnabled=True,
         OutboundCallsEnabled=True
     )
-    time.sleep(120)
     
     ssm_client.put_parameter(
         Name='hlc302-connect-instance-id',
