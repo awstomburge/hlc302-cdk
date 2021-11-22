@@ -17,3 +17,4 @@ old
 frontend-agent/node_modules
 frontend-customer/node_modules
 .DS_Store
+.vscode
