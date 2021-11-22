@@ -64,9 +64,9 @@ Once the Amazon Connect chat screen appears, change your status to **Available**
 
 
 Edit `frontend-customer\src\ConnectChatInterfaceConfig.js` with the proper values  
-- The value for `API_GATEWAY_ENDPOINT` is found by looking at `frontend-agent/src/cdk-outputs.json`
-- Navigate to Systems Manager and click on the **Parameter Store** tab. Click on the parameter called **hlc302-connect-instance-id**. The value you see is the value you should provide for the `INSTANCE_ID` variable. The value should have the pattern `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
-- The value for `CONTACT_FLOW_ID` is the **Flow ID** that you copied in saved in Parameter Store.
+- The value for `API_GATEWAY_ENDPOINT` is found by looking at `frontend-agent/src/cdk-outputs.json` in the `hlc302Customer` section.
+- Navigate to Systems Manager and click on the **Parameter Store** tab. Click on the parameter called **hlc302-flow-id**. The value you see is the value you should provide for the `CONTACT_FLOW_ID` variable.
+- In Systems Manager, click on the paramter called **hlc302-connect-instance-id**. The value you see is the value you should provide for the `INSTANCE_ID` variable. The value should have the pattern `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
 
 Install, build, and start frontend-customer  
 
