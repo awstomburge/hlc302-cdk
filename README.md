@@ -1,6 +1,10 @@
 
 # HLC302 Reinvent Builders Session
 
+For this session, we will be building the following architecture:
+
+![HLC302 architecture](images/architecture.png)
+
 Install the following applications based on your system:
 - [NodeJS](https://nodejs.org/en/download/)
         ```
@@ -35,7 +39,8 @@ Once the deploy completes, follow the steps below.
 - Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with reinvent2021. 
   - From the left navigation, click on **Contact Flows**. Under the **Amazon Lex** section, select the Lambda function called `StartVideoCall(Classic)` in the **Bot** box. Click the button that says **+ Add Amazon Lex Bot**. 
   - From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8080`. Click the **Add domain** button to save the change.
-- Now click on the Amazon Connect **Access URL**. In the Amazon Connect console that appears, hover over the **Routing** icon and select **Contact flows**. 
+- Now click on the Amazon Connect **Access URL**. The username for the Connect instance can be found on line 24 of `lambdas\create-user\create-user-custom-resource.py`. The password is found on line 25 of that same file.
+  - In the Amazon Connect console that appears, hover over the **Routing** icon and select **Contact flows**. 
   - On the screen that appears, click the **Create contact flow** button. 
   - Click the arrow at the upper right corner of the screen and select **Import flow (beta)**. 
   - In the box that appears, select `lambdas\import-flow\Chime Connect Integration flow.json`. Click **Import**. 
