@@ -20,11 +20,11 @@ app = cdk.App()
 # **********************************************************************************************************
 # Stacks
 # **********************************************************************************************************
-cr_stack = CustomResourceStack(app, 'hlc302-cr')
+cr_stack = CustomResourceStack(app, 'hlc302Cr')
 
-agent_stack = AgentStack(app, 'hlc302-agent')
+agent_stack = AgentStack(app, 'hlc302Agent')
 
-customer_stack = CustomerStack(app, 'hlc302-customer')
+customer_stack = CustomerStack(app, 'hlc302Customer')
 # **********************************************************************************************************
 # Synthesize App
 # **********************************************************************************************************

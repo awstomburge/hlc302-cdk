@@ -152,7 +152,7 @@ class AgentStack(cdk.Stack):
             user_name=chime_demo_user.user_name,
             status='Active'
         )
-
+            
         chime_demo_user_access = cdk.CfnOutput(self,
             id='ChimeDemoUserAccessKey',
             value=chime_demo_user_keys.ref,
@@ -163,4 +163,16 @@ class AgentStack(cdk.Stack):
             id='ChimeDemoUserSecretKey',
             value=chime_demo_user_keys.attr_secret_access_key,
             export_name='ChimeConnectDemoUserSecretKey'
+        )
+        
+        api_gateway = cdk.CfnOutput(self,
+            id='ApiGateway',
+            value=agent_rest_api.url,
+            export_name='ApiGateway'
+        )
+        
+        chime_demo_user_secret = cdk.CfnOutput(self,
+            id='Region',
+            value=self.region,
+            export_name='Region'
         )

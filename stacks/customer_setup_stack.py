@@ -4,6 +4,7 @@ from aws_cdk import core as cdk
 import aws_cdk.aws_apigateway as apigw
 import aws_cdk.aws_iam as iam
 import aws_cdk.aws_lambda as aws_lambda
+import aws_cdk.aws_ssm as ssm
 
 class CustomerStack(cdk.Stack):
 
@@ -141,5 +142,14 @@ class CustomerStack(cdk.Stack):
                     ]
                 )
             )
+        )
+        # Get latest version or specified version of plain string attribute
+        connect_instance_id = ssm.StringParameter.value_for_string_parameter(
+            self, "hlc302-connect-instance-alias")
+            
+        chime_demo_user_secret = cdk.CfnOutput(self,
+            id='InstanceId',
+            value=connect_instance_id,
+            export_name='InstanceId'
         )
 
