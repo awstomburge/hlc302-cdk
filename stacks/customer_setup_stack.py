@@ -144,12 +144,17 @@ class CustomerStack(cdk.Stack):
             )
         )
         # Get latest version or specified version of plain string attribute
-        connect_instance_id = ssm.StringParameter.value_for_string_parameter(
+        connect_instance_alias = ssm.StringParameter.value_for_string_parameter(
             self, "hlc302-connect-instance-alias")
             
-        chime_demo_user_secret = cdk.CfnOutput(self,
-            id='InstanceId',
-            value=connect_instance_id,
-            export_name='InstanceId'
+        connect_alias = cdk.CfnOutput(self,
+            id='InstanceAlias',
+            value=connect_instance_alias,
+            export_name='AliasId'
         )
 
+        api_gateway = cdk.CfnOutput(self,
+            id='ApiGateway',
+            value=customer_rest_api.url,
+            export_name='ApiGateway'
+        )

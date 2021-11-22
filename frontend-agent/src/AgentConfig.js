@@ -1,6 +1,6 @@
 import cdkExports from './cdk-outputs.json';
 
-export const AGENT_CCP_URL = 'https://' + cdkExports.hlc302Customer.InstanceId + '.my.connect.aws/connect/ccp-v2/chat';
+export const AGENT_CCP_URL = 'https://' + cdkExports.hlc302Customer.InstanceAlias + '.my.connect.aws/connect/ccp-v2/chat';
 
 export const AWS_REGION = cdkExports.hlc302Agent.Region;
 
