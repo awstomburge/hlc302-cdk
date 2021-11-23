@@ -132,7 +132,7 @@ Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)
 6. On the screen that appears, click the **Create contact flow** button. 
 7. Click the arrow at the upper right corner of the screen and select **Import flow (beta)**. <img width="1388" alt="image" src="https://user-images.githubusercontent.com/79946101/143142331-d021cbe3-d0df-4825-88da-b5b550b3d278.png">
 
-    - Download the file `contact-flows\Chime Connect Integration flow.json` to your local machine.
+    - Download the file `contact-flows\Chime Connect Integration flow.json` to your local machine from your **Cloud9** console.
     - In the box that appears, select `Chime Connect Integration flow.json` from the location where you downloaded it. Click **Import**. 
 8. Click the **Save** button. Then click the **Publish** button. 
 9. Under the contact flow name (top left side of the screen), click the **Show additional flow information** link. Copy the ID that appears in the ARN after `/contact-flow/`. For example, if your ARN is `arn:aws:connect:us-east-1:999999999999:instance/a1111111-1111-1111-1111-b11111111111/contact-flow/a1111111-b222-c3333-d4444-e55555555555`, you'll copy `a1111111-b222-c3333-d4444-e55555555555` for use in the next step. This value is the **Flow ID**.
@@ -147,14 +147,14 @@ Click the **Create parameter** button.
 13. Select **Actions** and **Deploy API**. In the box that appears, select `prod` in the **Deployment Stage** box and click **Deploy**.
 
 ## Starting the Agents View
-1. right click the folder fronend-agent, press download, and then unzip the folder
-2. once it is unzipped cd into it
+1. Right click the folder `fronend-agent`, press download, and then unzip the folder.
+2. Once it is unzipped cd into it
 3. Install, build, and start frontend-agent  
     ```
-    cd frontend-agent  
-    npm install --force
-    npm run build  
-    npm run start  
+        cd frontend-agent  
+        npm install --force
+        npm run build  
+        npm run start  
     ```
     
 Once the Amazon Connect chat screen appears, change your status to **Available** (upper left corner).
