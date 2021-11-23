@@ -6,11 +6,11 @@ var SSM = new AWS.SSM();
 exports.handler = async (event, context, callback) => {
     console.log("Received event: " + JSON.stringify(event));
     var body = JSON.parse(event["body"]);
-    
+
     var responseFromSSM = await SSM.getParameter({"Name" : "hlc302-connect-instance-id"}).promise();
     var instance_id = responseFromSSM.Parameter.Value;
     console.log(instance_id);
-    
+
     responseFromSSM = await SSM.getParameter({"Name" : "hlc302-flow-id"}).promise();
     var flow_parameter = responseFromSSM.Parameter.Value;
     console.log(flow_parameter);
@@ -22,11 +22,10 @@ exports.handler = async (event, context, callback) => {
         callback(null, buildResponseFailed(err));
     });
 };
-​
-​
+
 function startChatContact(body, instanceId, contactFlowId) {
-​
-    return new Promise(function (resolve, reject) {
+
+      return new Promise(function (resolve, reject) {
         var startChat = {
             "InstanceId": instanceId == "" ? process.env.INSTANCE_ID : instanceId,
             "ContactFlowId": contactFlowId == "" ? process.env.CONTACT_FLOW_ID : contactFlowId,
@@ -48,10 +47,9 @@ function startChatContact(body, instanceId, contactFlowId) {
                 resolve(data);
             }
         });
-​
-    });
+​    });
 }
-​
+
 function buildSuccessfulResponse(result) {
     const response = {
         statusCode: 200,
@@ -68,7 +66,7 @@ function buildSuccessfulResponse(result) {
     console.log("RESPONSE" + JSON.stringify(response));
     return response;
 }
-​
+
 function buildResponseFailed(err) {
     const response = {
         statusCode: 500,
