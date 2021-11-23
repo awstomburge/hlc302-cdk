@@ -27,14 +27,22 @@ The overall design is to be able to escalte calls to video. This is especially r
 9.	Click **Open AWS Console**
 10.	You should now be logged into the AWS Console. You will be using this account for the builder’s session today. Please do not use anyone else’s login.
 
+![Amazon Console](images/aws-console.PNG)
+
 ## Getting Started
 1. Select the Region drop down in the top right corner of the console and ensure it is set to **N.Virginia**
-2. Navigate to **Cloud9** in the AWS Console
-3. Give the environment a **Name** 
-4. Click **Next step**
-5. Next change the **Instance type** to *t3.small*
-6. Click **Next step**
-7. Click **Create environment**
+    ![Amazon Change Region](images/region-dropdown.PNG)
+3. Navigate to **Cloud9** in the AWS Console
+    ![Amazon Cloud9 Search Bar](images/search-bar.PNG)
+4. Click **Create environment**
+    ![Amazon Cloud9](images/cloud9.PNG)
+6. Give the environment a **Name** 
+7. Click **Next step**
+    ![Amazon Cloud9 Start](images/cloud9-start.PNG)
+8. Next change the **Instance type** to *t3.small*
+    ![Config Settings](images/config-settings.PNG)
+9. Click **Next step**
+10. Click **Create environment**
 
 ## Installations 
 *This application requires a few installations we will need the following packages installed.*
@@ -45,6 +53,7 @@ Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Sys
 - [Python <=3.7](https://www.python.org/downloads/release/python-3614/)
 *Since we are using Cloud9 today the AWS CLI and Python is already taken care of for us, so we will just have to install [NodeJS] and the [aws-cdk].*
 1. Once the IDE loads in the terminal on the bottom of the screen run the following commands to install the correct version of [NodeJS] and the [aws-cdk]
+    ![Amazon Cloud9 IDE](images/cloud9-ide.PNG)
     ```
     curl https://raw.github.com/creationix/nvm/master/install.sh | sh
     . ~/.bashrc
