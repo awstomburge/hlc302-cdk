@@ -1,9 +1,9 @@
-// Your AWS region, by default its 'us-east-1'
-export const AWS_REGION = 'us-east-1';
+import scriptOutputs from './script-outputs.json';
 
-// Check the apiGatewayEndpoint under output tab once the CF template is in CREATE_COMPLETE state
-export const API_GATEWAY_ENDPOINT = `https://<apiGatewayEndpoint>.execute-api.${AWS_REGION}.amazonaws.com/Prod`;
+export const AWS_REGION = scriptOutputs.region;
 
-export const CONTACT_FLOW_ID = '<YOUR CHIME CONNECT INTEGRATION FLOW ID>';
+export const API_GATEWAY_ENDPOINT = scriptOutputs.api_endpoint;
 
-export const INSTANCE_ID = '<YOUR AMAZON CONNECT INSTANCE ID>';
+export const CONTACT_FLOW_ID = scriptOutputs.flow_id;
+
+export const INSTANCE_ID = scriptOutputs.instance_id;
