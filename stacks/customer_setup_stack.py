@@ -156,5 +156,5 @@ class CustomerStack(cdk.Stack):
         api_gateway = cdk.CfnOutput(self,
             id='ApiGateway',
             value=customer_rest_api.url,
-            export_name='ApiGateway'
+            export_name='CustomerApiGateway'
         )
