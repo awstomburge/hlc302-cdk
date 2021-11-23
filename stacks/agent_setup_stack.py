@@ -168,7 +168,7 @@ class AgentStack(cdk.Stack):
         api_gateway = cdk.CfnOutput(self,
             id='ApiGateway',
             value=agent_rest_api.url,
-            export_name='ApiGateway'
+            export_name='AgtApiGateway'
         )
         
         chime_region = cdk.CfnOutput(self,

@@ -16,6 +16,12 @@ old
 # web excludes
 frontend-agent/node_modules
 frontend-agent/src/cdk-outputs.json
+frontend-agent/public/agent-bundle.js
+frontend-agent\public\agent-bundle.js
 frontend-customer/node_modules
+frontend-customer/src/cdk-outputs.json
+frontend-customer/public/customer-bundle.js
+frontend-customer/public/index.html
+frontend-customer/public/style.css
 .DS_Store
 .vscode
