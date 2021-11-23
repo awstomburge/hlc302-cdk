@@ -20,7 +20,7 @@ class CustomerStack(cdk.Stack):
 
         chat_sdk_layer = aws_lambda.LayerVersion(self,
             id='ChatSdkLayer',
-            compatible_runtimes=[aws_lambda.Runtime.NODEJS_12_X],
+            compatible_runtimes=[aws_lambda.Runtime.PYTHON_3_7],
             compatible_architectures=[aws_lambda.Architecture.X86_64],
             description='The AWS SDK including Amazon Connect Chat APIs.',
             code=aws_lambda.Code.from_asset(chat_sdk)
