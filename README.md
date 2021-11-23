@@ -128,7 +128,8 @@ The overall design is to be able to escalte calls to video. This is especially r
 5. In the Amazon Connect console that appears, hover over the **Routing** icon and select **Contact flows**. 
 6. On the screen that appears, click the **Create contact flow** button. 
 7. Click the arrow at the upper right corner of the screen and select **Import flow (beta)**. 
-    - In the box that appears, select `contact-flows\Chime Connect Integration flow.json`. Click **Import**. 
+    - Download the file `ontact-flows\Chime Connect Integration flow.json` to your local machine.
+    - In the box that appears, select `Chime Connect Integration flow.json` from the location where you downloaded it. Click **Import**. 
 8. Click the **Save** button. Then click the **Publish** button. 
 9. Under the contact flow name (top left side of the screen), click the **Show additional flow information** link. Copy the ID that appears in the ARN after `/contact-flow/`. For example, if your ARN is `arn:aws:connect:us-east-1:999999999999:instance/a1111111-1111-1111-1111-b11111111111/contact-flow/a1111111-b222-c3333-d4444-e55555555555`, you'll copy `a1111111-b222-c3333-d4444-e55555555555` for use in the next step. This value is the **Flow ID**.
 10. Navigate to *Systems Manager Parametere Store*. Click the **Create parameter** button. 

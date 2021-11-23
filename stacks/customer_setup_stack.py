@@ -29,8 +29,8 @@ class CustomerStack(cdk.Stack):
         start_chat_handler = aws_lambda.Function(self,
             id='StartChatLambda',
             code=aws_lambda.Code.from_asset(chat_code),
-            runtime=aws_lambda.Runtime.NODEJS_12_X,
-            handler='startChatContact.handler',
+            runtime=aws_lambda.Runtime.PYTHON_3_7,
+            handler='startChatContact.lambda_handler',
             layers=[chat_sdk_layer],
             memory_size=128,
             timeout=cdk.Duration.seconds(30)
