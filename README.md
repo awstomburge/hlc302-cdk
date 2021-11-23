@@ -135,8 +135,8 @@ Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)
     - Download the file `contact-flows\Chime Connect Integration flow.json` to your local machine.
     - In the box that appears, select `Chime Connect Integration flow.json` from the location where you downloaded it. Click **Import**. 
 8. Click the **Save** button. Then click the **Publish** button. 
-9. Under the contact flow name (top left side of the screen), click the **Show additional flow information** link. Copy the ID that appears in the ARN after `/contact-flow/`. For example, if your ARN is `arn:aws:connect:us-east-1:999999999999:instance/a1111111-1111-1111-1111-b11111111111/contact-flow/a1111111-b222-c3333-d4444-e55555555555`, you'll copy `a1111111-b222-c3333-d4444-e55555555555` for use in the next step. This value is the **Flow ID**.        <img width="502" alt="image" src="https://user-images.githubusercontent.com/79946101/143143045-83a879d8-6ea1-4eed-84e0-ea5798808130.png">
-
+9. Under the contact flow name (top left side of the screen), click the **Show additional flow information** link. Copy the ID that appears in the ARN after `/contact-flow/`. For example, if your ARN is `arn:aws:connect:us-east-1:999999999999:instance/a1111111-1111-1111-1111-b11111111111/contact-flow/a1111111-b222-c3333-d4444-e55555555555`, you'll copy `a1111111-b222-c3333-d4444-e55555555555` for use in the next step. This value is the **Flow ID**.
+ <img width="502" alt="image" src="https://user-images.githubusercontent.com/79946101/143143045-83a879d8-6ea1-4eed-84e0-ea5798808130.png">
 10. Navigate to *Systems Manager* and click on *Parameter Store* on the left-hand side. <img width="1396" alt="image" src="https://user-images.githubusercontent.com/79946101/143143469-e8f81b6f-06a0-49ea-a7ae-fd0b6b4ee63a.png">
  Click the **Create parameter** button. 
 11. In the **Name** field, enter `hlc302-flow-id`. In the value, enter the **Flow ID** from the previous step. Click the **Create parameter** button to save the value.
