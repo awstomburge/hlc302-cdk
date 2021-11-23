@@ -2,6 +2,7 @@
 The overall design is to be able to escalte calls to video. This is especially relevant in xyz. It creates a more tailored and personalized experiance for your customers while allowing for the ease of virtual appointments.
 
 ***Warning this solution out of the box is not HIPPA compliant it is a proof of concept for tools you can use in AWS that will allow you to accomplish this goal
+
 ## Architecture
 
 ![Architecture](images/architecture.png)
@@ -15,7 +16,9 @@ The overall design is to be able to escalte calls to video. This is especially r
 - AWS Lambda - short description
 
 ## Event Engine Accounts
+
 *Before clicking on this link please make sure you are signed out of any other AWS Account or open the link in a private browser*.
+
 1.	Open the Event Engine link provided in a browser 
 2.	Verify the event hash and select **Accept Terms & Login**
 3.	Select **Email One-Time Password (OTP)** option
@@ -56,6 +59,7 @@ The overall design is to be able to escalte calls to video. This is especially r
 
 ## Installations 
 *This application requires a few installations we will need the following packages installed.*
+
 - [NodeJS](https://nodejs.org/en/download/)
 - [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_install)
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). 
@@ -79,7 +83,9 @@ Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Sys
     npm install aws-cdk -g
     ```
 ## Deploying the Infrastructure 
+
 *Next we are going to clone the repo and start out virtual environment*
+
 1. Clone the repo from github
     ```
     git clone https://github.com/awstomburge/hlc302-cdk.git
@@ -95,7 +101,9 @@ Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Sys
     pip install --upgrade pip
     pip install -r requirements.txt
     ```
+
 *Now we can deploy the CDK templates to create the infrastructure*
+
 4. Since we’ve never deployed the AWS CDK in this account before we must bootstrap it first and then we can deploy it
     ```
     cdk bootstrap
@@ -107,6 +115,7 @@ Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Sys
     ```
 ## Post Deployment
 *Once the deploy completes, follow the steps below.*
+
 1. Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*. 
 2. From the left navigation, click on **Contact Flows**. Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)` in the **Bot** box. Click the button that says **+ Add Amazon Lex Bot**. 
 3. From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8000` and `https://localhost:9000`. Click the **Add domain** button to save the change.
