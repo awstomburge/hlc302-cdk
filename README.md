@@ -7,7 +7,7 @@ The overall design is to be able to escalte calls to video. This is especially r
 ![Architecture](images/architecture.png)
 
 - Amazon Connect - short description
-- Amazon Lex
+- Amazon Lex - short description
 - Amazon CloudFormation - short description
 - Amazon API Gateway - short description
 - Amazon Chime SDK - short description
