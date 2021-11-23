@@ -121,20 +121,21 @@ The overall design is to be able to escalte calls to video. This is especially r
 
 1. Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*. 
 2. From the left navigation, click on **Contact Flows**. Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)` in the **Bot** box. Click the button that says **+ Add Amazon Lex Bot**. 
-3. From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8000` and `https://localhost:9000`. Click the **Add domain** button to save the change.
+3. From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8080` and `http://localhost:9000`. Click the **Add domain** button to save the change.
 4. Now click on the Amazon Connect **Access URL**. 
     - user_name = admin  
     - user_password = AdminPassword1!
 5. In the Amazon Connect console that appears, hover over the **Routing** icon and select **Contact flows**. 
 6. On the screen that appears, click the **Create contact flow** button. 
 7. Click the arrow at the upper right corner of the screen and select **Import flow (beta)**. 
-    - Download the file `ontact-flows\Chime Connect Integration flow.json` to your local machine.
+    - Download the file `contact-flows\Chime Connect Integration flow.json` to your local machine.
     - In the box that appears, select `Chime Connect Integration flow.json` from the location where you downloaded it. Click **Import**. 
 8. Click the **Save** button. Then click the **Publish** button. 
 9. Under the contact flow name (top left side of the screen), click the **Show additional flow information** link. Copy the ID that appears in the ARN after `/contact-flow/`. For example, if your ARN is `arn:aws:connect:us-east-1:999999999999:instance/a1111111-1111-1111-1111-b11111111111/contact-flow/a1111111-b222-c3333-d4444-e55555555555`, you'll copy `a1111111-b222-c3333-d4444-e55555555555` for use in the next step. This value is the **Flow ID**.
 10. Navigate to *Systems Manager Parametere Store*. Click the **Create parameter** button. 
 11. In the **Name** field, enter `hlc302-flow-id`. In the value, enter the **Flow ID** from the previous step. Click the **Create parameter** button to save the value.
 12. Navigate to *API Gateway*. Click the API called `start-chat-connect`. From the **Actions** menu, select **Enable CORS**. Check the boxes for `DEFAULT 4XX` and `DEFAULT 5XX`. Click **Enable CORS and replace existing CORS headers**.
+13. Select **Actions** and **Deploy API**. In the box that appears, select `prod` in the **Deployment Stage** box and click **Deploy**.
 
 ## Starting the Agents View
 1. right click the folder fronend-agent, press download, and then unzip the folder
