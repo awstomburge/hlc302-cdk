@@ -57,14 +57,16 @@ The overall design is to be able to escalte calls to video. This is especially r
 
 7. Click **Next step**
 8. Click **Create environment**
+9. Navigate to the EC2 console
+10. Under the **Instances** tab, check the box next to the instance (the name should start with `aws-cloud9-`). From the **Actions** menu, select **Security** and **Modify IAM Role**.
+11. Select the role called `Cloud9AdminAccess` and click **Save**.
+12. In the Cloud9 IDE, click the gear icon (top right). Under **AWS Settings** turn off **AWS managed temporary credentials**.
 
 ## Installations 
 *This application requires a few installations we will need the following packages installed.*
 
 - [NodeJS](https://nodejs.org/en/download/)
 - [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_install)
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). 
-Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Systems Manager. To make this easy, you can assign the user the CLI is using with Adminstrator permissions. 
 - [Python <=3.7](https://www.python.org/downloads/release/python-3614/)
 
 *Since we are using Cloud9 today the AWS CLI and Python is already taken care of for us, so we will just have to install [NodeJS] and the [aws-cdk].*
@@ -127,11 +129,14 @@ Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)
 5. In the Amazon Connect console that appears, hover over the **Routing** icon and select **Contact flows**. 
 6. On the screen that appears, click the **Create contact flow** button. 
 7. Click the arrow at the upper right corner of the screen and select **Import flow (beta)**. 
-    - In the box that appears, select `contact-flows\Chime Connect Integration flow.json`. Click **Import**. 
+    - Download the file `contact-flows\Chime Connect Integration flow.json` to your local machine.
+    - In the box that appears, select `Chime Connect Integration flow.json` from the location where you downloaded it. Click **Import**. 
 8. Click the **Save** button. Then click the **Publish** button. 
 9. Under the contact flow name (top left side of the screen), click the **Show additional flow information** link. Copy the ID that appears in the ARN after `/contact-flow/`. For example, if your ARN is `arn:aws:connect:us-east-1:999999999999:instance/a1111111-1111-1111-1111-b11111111111/contact-flow/a1111111-b222-c3333-d4444-e55555555555`, you'll copy `a1111111-b222-c3333-d4444-e55555555555` for use in the next step. This value is the **Flow ID**.
 10. Navigate to *Systems Manager Parametere Store*. Click the **Create parameter** button. 
 11. In the **Name** field, enter `hlc302-flow-id`. In the value, enter the **Flow ID** from the previous step. Click the **Create parameter** button to save the value.
+12. Navigate to *API Gateway*. Click the API called `start-chat-connect`. From the **Actions** menu, select **Enable CORS**. Check the boxes for `DEFAULT 4XX` and `DEFAULT 5XX`. Click **Enable CORS and replace existing CORS headers**.
+13. Select **Actions** and **Deploy API**. In the box that appears, select `prod` in the **Deployment Stage** box and click **Deploy**.
 
 ## Starting the Agents View
 1. right click the folder fronend-agent, press download, and then unzip the folder
@@ -149,13 +154,14 @@ Once the Amazon Connect chat screen appears, change your status to **Available**
 ![Amazon Connect Chat Interface](images/connect-chat.png)
 
 ## Starting the Customers View
-1. run the script 
+1. Type `aws configure` and hit enter until you see it prompt for `Default region name`. At the prompt, type `us-east-1` and hit enter until the console prompt returns.
+2. run the script 
     ```
     sh config_generator.sh
     ```
-2. right click the folder fronend-customer, press download, and then unzip the folder
-3. once it is unzipped cd into it
-4. Install, build, and start frontend-customer  
+3. right click the folder fronend-customer, press download, and then unzip the folder
+4. once it is unzipped cd into it
+5. Install, build, and start frontend-customer  
     ```
     cd frontend-customer  
     npm install --force
