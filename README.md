@@ -52,7 +52,7 @@ Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Sys
     npm install aws-cdk -g
     ```
 ## Deploying the Infrastructure 
-> Next we are going to clone the repo and start out virtual environment
+*Next we are going to clone the repo and start out virtual environment*
 1. Clone the repo from github
     ```
     git clone https://github.com/awstomburge/hlc302-cdk.git
@@ -68,7 +68,7 @@ Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Sys
     pip install --upgrade pip
     pip install -r requirements.txt
     ```
-> Now we can deploy the CDK templates to create the infrastructure
+*Now we can deploy the CDK templates to create the infrastructure*
 4. Since we’ve never deployed the AWS CDK in this account before we must bootstrap it first and then we can deploy it
     ```
     cdk bootstrap
@@ -79,7 +79,7 @@ Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Sys
     deactivate
     ```
 ## Post Deployment
->Once the deploy completes, follow the steps below. 
+*Once the deploy completes, follow the steps below.*
 1. Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*. 
 2. From the left navigation, click on **Contact Flows**. Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)` in the **Bot** box. Click the button that says **+ Add Amazon Lex Bot**. 
 3. From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8000` and `https://localhost:9000`. Click the **Add domain** button to save the change.
