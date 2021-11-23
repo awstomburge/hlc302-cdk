@@ -1,7 +1,7 @@
 # HLC302 Reinvent Builders Session
 The overall design is to be able to escalte calls to video. This is especially relevant in xyz. It creates a more tailored and personalized experiance for your customers while allowing for the ease of virtual appointments.
 
->***Warning this solution out of the box is not HIPPA compliant it is a proof of concept for tools you can use in AWS that will allow you to accomplish this goal
+***Warning this solution out of the box is not HIPPA compliant it is a proof of concept for tools you can use in AWS that will allow you to accomplish this goal
 ## Services Used
 - Amazon Connect - short description
 - Amazon CloudFormation - short description
@@ -39,7 +39,7 @@ The overall design is to be able to escalte calls to video. This is especially r
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). 
 Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Systems Manager. To make this easy, you can assign the user the CLI is using with Adminstrator permissions. 
 - [Python <=3.7](https://www.python.org/downloads/release/python-3614/)
->Since we are using Cloud9 today the AWS CLI and Python is already taken care of for us, so we will just have to install [NodeJS] and the [aws-cdk].
+*Since we are using Cloud9 today the AWS CLI and Python is already taken care of for us, so we will just have to install [NodeJS] and the [aws-cdk].*
 1. Once the IDE loads in the terminal on the bottom of the screen run the following commands to install the correct version of [NodeJS] and the [aws-cdk]
     ```
     curl https://raw.github.com/creationix/nvm/master/install.sh | sh
@@ -115,7 +115,6 @@ Once the Amazon Connect chat screen appears, change your status to **Available**
     ```
     sh config_generator.sh
     ```
-
 2. right click the folder fronend-customer, press download, and then unzip the folder
 3. once it is unzipped cd into it
 4. Install, build, and start frontend-customer  
