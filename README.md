@@ -28,6 +28,7 @@ The overall design is to be able to escalte calls to video. This is especially r
 7.	Before the event begins the Event Engine dashboard will show an Event Not Running message. When the event starts, use the following instructions to sign in to the AWS Console: 
 8.	Click **AWS Console**
 9.	Click **Open AWS Console**
+
 *You should now be logged into the AWS Console. You will be using this account for the builder’s session today. Please do not use anyone else’s login.*
 
 ![Amazon Console](images/aws-console.PNG)
