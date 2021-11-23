@@ -7,13 +7,13 @@ The overall design is to be able to escalte calls to video. This is especially r
 
 ![Architecture](images/architecture.png)
 
-- Amazon Connect - short description
-- Amazon Lex - short description
-- Amazon CloudFormation - short description
-- Amazon API Gateway - short description
-- Amazon Chime SDK - short description
-- AWS Cloud9 - short description
-- AWS Lambda - short description
+- Amazon Connect - omnichannel cloud contact center that helps you provide superior customer service at a lower cost.
+- Amazon Lex - fully managed artificial intelligence (AI) service with advanced natural language models for building conversational interfaces into applications.
+- Amazon CloudFormation - lets you model, provision, and manage AWS and third-party resources by treating infrastructure as code.
+- Amazon API Gateway - fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
+- Amazon Chime SDK - a set of real-time communications components that developers can use to quickly add messaging, audio, video, and screen sharing capabilities to their web or mobile applications.
+- AWS Cloud9 - a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser.
+- AWS Lambda - a serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers.
 
 ## Event Engine Accounts
 
