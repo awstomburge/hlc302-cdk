@@ -151,13 +151,14 @@ Once the Amazon Connect chat screen appears, change your status to **Available**
 ![Amazon Connect Chat Interface](images/connect-chat.png)
 
 ## Starting the Customers View
-1. run the script 
+1. Type `aws configure` and hit enter until you see it prompt for `Default region name`. At the prompt, type `us-east-1` and hit enter until the console prompt returns.
+2. run the script 
     ```
     sh config_generator.sh
     ```
-2. right click the folder fronend-customer, press download, and then unzip the folder
-3. once it is unzipped cd into it
-4. Install, build, and start frontend-customer  
+3. right click the folder fronend-customer, press download, and then unzip the folder
+4. once it is unzipped cd into it
+5. Install, build, and start frontend-customer  
     ```
     cd frontend-customer  
     npm install --force
