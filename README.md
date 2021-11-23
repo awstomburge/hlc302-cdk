@@ -43,10 +43,10 @@ The overall design is to be able to escalte calls to video. This is especially r
     ![Amazon Cloud9](images/cloud9.PNG)
 
 4. Give the environment a **Name** 
-5. Click **Next step**
     
     ![Amazon Cloud9 Start](images/cloud9-start.PNG)
 
+5. Click **Next step**
 6. Next change the **Instance type** to *t3.small*
     
     ![Config Settings](images/config-settings.PNG)
