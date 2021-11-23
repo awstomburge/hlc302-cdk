@@ -7,13 +7,13 @@ The overall design is to be able to escalte calls to video. This is especially r
 
 ![Architecture](images/architecture.png)
 
-- Amazon Connect - short description
-- Amazon Lex - short description
-- Amazon CloudFormation - short description
-- Amazon API Gateway - short description
-- Amazon Chime SDK - short description
-- AWS Cloud9 - short description
-- AWS Lambda - short description
+- Amazon Connect - omnichannel cloud contact center that helps you provide superior customer service at a lower cost.
+- Amazon Lex - fully managed artificial intelligence (AI) service with advanced natural language models for building conversational interfaces into applications.
+- Amazon CloudFormation - lets you model, provision, and manage AWS and third-party resources by treating infrastructure as code.
+- Amazon API Gateway - fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
+- Amazon Chime SDK - a set of real-time communications components that developers can use to quickly add messaging, audio, video, and screen sharing capabilities to their web or mobile applications.
+- AWS Cloud9 - a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser.
+- AWS Lambda - a serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers.
 
 ## Event Engine Accounts
 
@@ -118,7 +118,8 @@ Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Sys
 *Once the deploy completes, follow the steps below.*
 
 1. Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*. 
-2. From the left navigation, click on **Contact Flows**. Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)` in the **Bot** box. Click the button that says **+ Add Amazon Lex Bot**. 
+2. From the left navigation, click on **Contact Flows**. ![image](https://user-images.githubusercontent.com/79946101/143132591-57fbae6b-0acd-478c-8b80-849ec88bb3dc.png)
+Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)` in the **Bot** box.  Click the button that says **+ Add Amazon Lex Bot**. 
 3. From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8000` and `https://localhost:9000`. Click the **Add domain** button to save the change.
 4. Now click on the Amazon Connect **Access URL**. 
     - user_name = admin  
