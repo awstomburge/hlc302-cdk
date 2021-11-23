@@ -61,7 +61,9 @@ The overall design is to be able to escalte calls to video. This is especially r
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html). 
 Configure the CLI to have full access to Amazon Connect, Amazon Lex, and AWS Systems Manager. To make this easy, you can assign the user the CLI is using with Adminstrator permissions. 
 - [Python <=3.7](https://www.python.org/downloads/release/python-3614/)
+
 *Since we are using Cloud9 today the AWS CLI and Python is already taken care of for us, so we will just have to install [NodeJS] and the [aws-cdk].*
+
 1. Once the IDE loads in the terminal on the bottom of the screen run the following commands to install the correct version of [NodeJS] and the [aws-cdk]
     
     ![Amazon Cloud9 IDE](images/cloud9-ide.PNG)
