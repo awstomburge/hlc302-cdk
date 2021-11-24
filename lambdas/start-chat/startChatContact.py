@@ -42,7 +42,7 @@ def buildSuccessfulResponse(result):
          "isBase64Encoded": False,
          "statusCode": 200,
          "headers": {
-             "Access-Control-Allow-Origin": "http://localhost:9000",
+             "Access-Control-Allow-Origin": "*",
             'Content-Type': 'application/json',
             'Access-Control-Allow-Credentials' : "true",
             'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'
@@ -57,7 +57,7 @@ def buildResponseFailed(err):
         "isBase64Encoded": False,
         "statusCode": 500,
         "headers": {
-            "Access-Control-Allow-Origin": "http://localhost:9000",
+            "Access-Control-Allow-Origin": "*",
             'Content-Type': 'application/json',
             'Access-Control-Allow-Credentials' : "true",
             'Access-Control-Allow-Headers':'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'
