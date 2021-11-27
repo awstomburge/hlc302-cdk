@@ -162,7 +162,7 @@ Once the Amazon Connect chat screen appears, change your status to **Available**
 ![Amazon Connect Chat Interface](images/connect-chat.png)
 
 ## Starting the Customers View
-1. Type `aws configure` and hit enter until you see it prompt for `Default region name`. At the prompt, type `us-east-1` and hit enter until the console prompt returns.
+1. Back in Cloud9, type `aws configure` and hit enter until you see it prompt for `Default region name`. At the prompt, type `us-east-1` and hit enter until the console prompt returns.
 2. run the script 
     ```
     sh config_generator.sh
