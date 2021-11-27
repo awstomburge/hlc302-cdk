@@ -82,9 +82,6 @@ The overall design is to be able to escalte calls to video. This is especially r
     nvm use 14.17.5
     nvm alias default v14.17.5
     ```
-    ```
-    npm install aws-cdk -g
-    ```
 ## Deploying the Infrastructure 
 
 *Next we are going to clone the repo and start out virtual environment*
@@ -98,6 +95,9 @@ The overall design is to be able to escalte calls to video. This is especially r
     cd hlc302-cdk
     python -m venv hlc302
     source hlc302/bin/activate
+    ```
+    ```
+    npm install aws-cdk -g
     ```
 3. Install the packages
     ```
