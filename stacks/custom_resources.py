@@ -16,9 +16,9 @@ class CustomResourceStack(cdk.Stack):
 
         connect_instance = ConnectInstanceResource(self, 'CI')
 
-        associate_bot = AssociateBotResource(self, 'AB')
-        associate_bot.node.add_dependency(lex_bot)
-        associate_bot.node.add_dependency(connect_instance)
+        # associate_bot = AssociateBotResource(self, 'AB')
+        # associate_bot.node.add_dependency(lex_bot)
+        # associate_bot.node.add_dependency(connect_instance)
 
         # import_flow = ImportFlowResource(self, 'IF')
         # import_flow.node.add_dependency(connect_instance)

@@ -110,7 +110,7 @@ The overall design is to be able to escalte calls to video. This is especially r
 4. Since we’ve never deployed the AWS CDK in this account before we must bootstrap it first and then we can deploy it
     ```
     cdk bootstrap
-    cdk deploy --all -O frontend-agent/src/cdk-outputs.json
+    cdk deploy --all --require-approval never -O frontend-agent/src/cdk-outputs.json
     ```
 5. Now we can exit out of the virtual environment
     ```

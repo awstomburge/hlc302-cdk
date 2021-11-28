@@ -27,11 +27,11 @@ bot_name = 'StartVideoCall'
 def create(event, context):
     logger.info("Got Create")
 
-    lex_client.put_intent(name='Chat', sampleUtterances=['Chat'], fulfillmentActivity={'type':'ReturnIntent'})
-    lex_client.create_intent_version(name='Chat')
+    # lex_client.put_intent(name='Chat', sampleUtterances=['Chat'], fulfillmentActivity={'type':'ReturnIntent'})
+    # lex_client.create_intent_version(name='Chat')
     
-    lex_client.put_intent(name='Video', sampleUtterances=['Video'], fulfillmentActivity={'type':'ReturnIntent'})
-    lex_client.create_intent_version(name='Video')
+    # lex_client.put_intent(name='Video', sampleUtterances=['Video'], fulfillmentActivity={'type':'ReturnIntent'})
+    # lex_client.create_intent_version(name='Video')
 
     create_bot = lex_client.put_bot(
         name=bot_name,
