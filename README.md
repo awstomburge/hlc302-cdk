@@ -1,7 +1,7 @@
 # HLC302 Reinvent Builders Session
-The overall design is to be able to escalte calls to video. This is especially relevant in xyz. It creates a more tailored and personalized experiance for your customers while allowing for the ease of virtual appointments.
+The overall design is to be able to escalate calls to video. This is especially relevant in virtual patient care settings when you may want to start an interaction over chat or ovice, and enable movement into video. This creates a more tailored and personalized experience for your customers while allowing for the ease of virtual appointments.
 
-*****Warning this solution out of the box is not HIPPA compliant it is a proof of concept for tools you can use in AWS that will allow you to accomplish this goal**
+** Warning: adopting this solution does not make a customer HIPAA compliant. This solution is a proof of concept to illustrate tools and services that customers can use to build a similar solution on AWS. For more information about HIPAA on AWS see [the AWS web site](https://aws.amazon.com/compliance/hipaa-compliance/). **
 
 ## Architecture
 
@@ -161,14 +161,14 @@ Once the Amazon Connect chat screen appears, change your status to **Available**
 
 ![Amazon Connect Chat Interface](images/connect-chat.png)
 
-## Starting the Customers View
+## Starting the Customer's View
 1. Back in Cloud9, type `aws configure` and hit enter until you see it prompt for `Default region name`. At the prompt, type `us-east-1` and hit enter until the console prompt returns.
-2. run the script 
+2. Run the script 
     ```
     sh config_generator.sh
     ```
-3. right click the folder fronend-customer, press download, and then unzip the folder
-4. once it is unzipped cd into it
+3. Right click the folder fronend-customer, press download, and then unzip the folder
+4. Once it is unzipped cd into it
 5. Install, build, and start frontend-customer  
     ```
     cd frontend-customer  
