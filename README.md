@@ -147,6 +147,7 @@ Click the **Create parameter** button.
 12. Navigate to *API Gateway*. Click the API called `start-chat-connect`. From the **Actions** menu, select **Enable CORS**. <img width="1255" alt="image" src="https://user-images.githubusercontent.com/79946101/143143720-250b2e3a-e15d-4a2d-a9b1-f01ee9ed7d6e.png">
  Check the boxes for `DEFAULT 4XX` and `DEFAULT 5XX`. Click **Enable CORS and replace existing CORS headers**. Click **Yes, replace existing values**.
 13. Select **Actions** and **Deploy API**. In the box that appears, select `prod` in the **Deployment Stage** box and click **Deploy**.
+14. Repeat steps #12 and #13 for the `chime-meeting-operations` API in API Gateway.
 
 ## Starting the Agents View
 1. Right click the folder `fronend-agent`, press download, and then unzip the folder.
