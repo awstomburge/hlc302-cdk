@@ -122,7 +122,7 @@ The overall design is to be able to escalate calls to video. This is especially 
 1. Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*. 
 2. From the left navigation, click on **Contact Flows**. ![image](https://user-images.githubusercontent.com/79946101/143132591-57fbae6b-0acd-478c-8b80-849ec88bb3dc.png)
 Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)` in the **Bot** box.  Click the button that says **+ Add Amazon Lex Bot**. 
-3. From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8000` and `https://localhost:9000`. Click the **Add domain** button to save the change. <img width="1070" alt="image" src="https://user-images.githubusercontent.com/79946101/143141982-6cc44a1b-73c8-4a13-b758-a92dd8b2c694.png">
+3. From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8080` and `https://localhost:9000`. Click the **Add domain** button to save the change. <img width="1070" alt="image" src="https://user-images.githubusercontent.com/79946101/143141982-6cc44a1b-73c8-4a13-b758-a92dd8b2c694.png">
 
 4. Now click on the Amazon Connect **Access URL**. 
     - user_name = admin  

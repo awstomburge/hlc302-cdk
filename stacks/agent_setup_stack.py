@@ -82,7 +82,7 @@ class AgentStack(cdk.Stack):
         meeting.add_method(
             http_method='POST',
             api_key_required=False,
-            authorization_type=apigw.AuthorizationType.IAM,
+            authorization_type=apigw.AuthorizationType.NONE,
             method_responses=[
                 apigw.MethodResponse(
                     status_code='200',
@@ -110,7 +110,7 @@ class AgentStack(cdk.Stack):
         meeting.add_method(
             http_method='DELETE',
             api_key_required=False,
-            authorization_type=apigw.AuthorizationType.IAM,
+            authorization_type=apigw.AuthorizationType.NONE,
             request_parameters={
                 "method.request.querystring.meetingId": True
             },
