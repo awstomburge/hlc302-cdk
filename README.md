@@ -120,7 +120,7 @@ The overall design is to be able to escalate calls to video. This is especially 
 *Once the deploy completes, follow the steps below.*
 
 1. Download the [sample Lex bot](https://github.com/aws-samples/amazon-chime-sdk-amazon-connect-integration-demo/blob/master/lexbot/StartVideoCall_2_0f829a65-607b-45c3-966d-731d6ab7c90c_Bot_LEX_V1.zip). Open **Amazon Lex** in the AWS Console. Navigate to the **Bots** tab on the **v1** console. From the **Actions** menu, select **Import** and upload the sample Lex bot you just downloaded.
-2. Click on the **StartVideoCall** link for the bot. In the window that appears, click the **Build** button.
+2. Click on the **StartVideoCall** link for the bot. In the window that appears, click the **Build** button. Once the bot has been built, click the **Publish** button. In the **alias** section, enter `prod`.
 3. Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*. 
 4. From the left navigation, click on **Contact Flows**. ![image](https://user-images.githubusercontent.com/79946101/143132591-57fbae6b-0acd-478c-8b80-849ec88bb3dc.png)
 Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)` in the **Bot** box.  Click the button that says **+ Add Amazon Lex Bot**. 
