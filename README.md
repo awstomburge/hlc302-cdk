@@ -1,19 +1,24 @@
 # HLC302 Reinvent Builders Session
-The overall design is to be able to escalate calls to video. This is especially relevant in virtual patient care settings when you may want to start an interaction over chat or ovice, and enable movement into video. This creates a more tailored and personalized experience for your customers while allowing for the ease of virtual appointments.
+In late 2019 and early 2020, the concept of a “routine” shifted overnight in both professional and personal arenas. Terms like “social distancing”, “shelter at home”, and “quarantine” have become mainstream buzzwords, and many jobs normally accomplished in an office (like doctor visits) have moved to virtual settings. Telehealth is the use of two-way telecommunications technologies to provide clinical health care through a variety of remote methods. Making doctor-patient communication accessible through multiple channels (such as voice, chat, and video) without imposing downloads or additional requirements has become critical to improve patient experiences for healthcare organizations.
 
-** Warning: adopting this solution does not make a customer HIPAA compliant. This solution is a proof of concept to illustrate tools and services that customers can use to build a similar solution on AWS. For more information about HIPAA on AWS see [the AWS web site](https://aws.amazon.com/compliance/hipaa-compliance/). **
+In this session, you will learn how to deploy a Telehealth solution that allows communication via chat, video and audio between the patient and a doctor (referred to as customer and agent here). The customer can connect to an agent over these communication channels via a browser-based interface that can be used as a standalone site, integrated into existing website, mobile app, etc. This is especially relevant in virtual patient care settings when you may want to start an interaction over chat or voice, and enable movement into video. This creates a more tailored and personalized experience for your customers while allowing for the ease of virtual appointments.
+
+The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS Lambda with automated deployment using Cloudformation via AWS Cloud Development Kit (CDK) via AWS Cloud9 IDE.
+
+** **Warning: Adopting this solution does not make the deployment HIPAA compliant. This solution is a proof of concept and not production ready intended to illustrate tools and services that customers can use as a guidance to build a similar solution on AWS. For more information about HIPAA Compliance on AWS [click here](https://aws.amazon.com/compliance/hipaa-compliance/).** **
 
 ## Architecture
 
 ![Architecture](images/architecture.png)
 
-- Amazon Connect - omnichannel cloud contact center that helps you provide superior customer service at a lower cost.
-- Amazon Lex - fully managed artificial intelligence (AI) service with advanced natural language models for building conversational interfaces into applications.
-- Amazon CloudFormation - lets you model, provision, and manage AWS and third-party resources by treating infrastructure as code.
-- Amazon API Gateway - fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
-- Amazon Chime SDK - a set of real-time communications components that developers can use to quickly add messaging, audio, video, and screen sharing capabilities to their web or mobile applications.
-- AWS Cloud9 - a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser.
-- AWS Lambda - a serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers.
+- [Amazon Connect](https://aws.amazon.com/connect/) - omnichannel cloud contact center that helps you provide superior customer service at a lower cost. You can set up a Virtual Contact Center in minutes and then easily configure the service using a single graphical console to design powerful contact flows, manage your agents, and track performance metrics.
+- [Amazon Lex](https://aws.amazon.com/lex/) - fully managed artificial intelligence (AI) service with advanced natural language models for building conversational interfaces into applications.
+- [Amazon Polly](https://aws.amazon.com/polly/) - artificial intelligence (AI) service that turns text into lifelike speech, allowing you to create applications that talk, and build entirely new categories of speech-enabled products.
+- [Amazon CloudFormation generated using the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/home.html) - lets you model, provision, and manage AWS and third-party resources by treating infrastructure as code.
+- [Amazon API Gateway](https://aws.amazon.com/api-gateway/) - fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
+- [Amazon Chime SDK](https://aws.amazon.com/chime/chime-sdk/) - a set of real-time communications components that developers can use to quickly add messaging, audio, video, and screen sharing capabilities to their web or mobile applications.
+- [AWS Cloud9](https://aws.amazon.com/cloud9/) - a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser.
+- [AWS Lambda](https://aws.amazon.com/lambda/) - a serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers.
 
 ## Event Engine Accounts
 
@@ -57,10 +62,6 @@ The overall design is to be able to escalate calls to video. This is especially 
 
 7. Click **Next step**
 8. Click **Create environment**
-9. Navigate to the EC2 console
-10. Under the **Instances** tab, check the box next to the instance (the name should start with `aws-cloud9-`). From the **Actions** menu, select **Security** and **Modify IAM Role**.
-11. Select the role called `Cloud9AdminAccess` and click **Save**.
-12. In the Cloud9 IDE, click the gear icon (top right). Under **AWS Settings** turn off **AWS managed temporary credentials**.
 
 ## Installations 
 *This application requires a few installations we will need the following packages installed.*
@@ -119,10 +120,8 @@ The overall design is to be able to escalate calls to video. This is especially 
 ## Post Deployment
 *Once the deploy completes, follow the steps below.*
 
-1. Download the [sample Lex bot](https://github.com/aws-samples/amazon-chime-sdk-amazon-connect-integration-demo/blob/master/lexbot/StartVideoCall_2_0f829a65-607b-45c3-966d-731d6ab7c90c_Bot_LEX_V1.zip). Open **Amazon Lex** in the AWS Console. Navigate to the **Bots** tab on the **v1** console. From the **Actions** menu, select **Import** and upload the sample Lex bot you just downloaded.
-2. Click on the **StartVideoCall** link for the bot. In the window that appears, click the **Build** button. Once the bot has been built, click the **Publish** button. In the **alias** section, enter `prod`.
-3. Open **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*. 
-4. From the left navigation, click on **Contact Flows**. ![image](https://user-images.githubusercontent.com/79946101/143132591-57fbae6b-0acd-478c-8b80-849ec88bb3dc.png)
+1. Navigate to **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*.
+2. From the left navigation, click on **Contact Flows**. ![image](https://user-images.githubusercontent.com/79946101/143132591-57fbae6b-0acd-478c-8b80-849ec88bb3dc.png)
 Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)` in the **Bot** box.  Click the button that says **+ Add Amazon Lex Bot**. 
 3. From the left navigation, click on **Approved origins**. Click the **Add domain** button and enter `https://localhost:8080` and `https://localhost:9000`. Click the **Add domain** button to save the change. <img width="1070" alt="image" src="https://user-images.githubusercontent.com/79946101/143141982-6cc44a1b-73c8-4a13-b758-a92dd8b2c694.png">
 
@@ -165,14 +164,13 @@ Once the Amazon Connect chat screen appears, change your status to **Available**
 ![Amazon Connect Chat Interface](images/connect-chat.png)
 
 ## Starting the Customer's View
-1. Back in Cloud9, type `aws configure` and hit enter until you see it prompt for `Default region name`. At the prompt, type `us-east-1` and hit enter until the console prompt returns.
-2. Run the script 
+1. Back in Cloud9, run the script 
     ```
     sh config_generator.sh
     ```
-3. Right click the folder fronend-customer, press download, and then unzip the folder
-4. Once it is unzipped cd into it
-5. Install, build, and start frontend-customer  
+2. Right click the folder fronend-customer, press download, and then unzip the folder
+3. Once it is unzipped cd into it
+4. Install, build, and start frontend-customer  
     ```
     cd frontend-customer  
     npm install --force
