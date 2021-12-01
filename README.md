@@ -56,17 +56,17 @@ The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS 
     ![Amazon Cloud9 Start](images/cloud9-start.PNG)
 
 5. Click **Next step**
-6. Next change the **Instance type** to *t3.small*
+6. Next change the **Instance type** to `t3.small` and leave the rest of the settings with their default selections
     
     ![Config Settings](images/config-settings.PNG)
 
 7. Click **Next step**
-8. Click **Create environment**
+8. Click **Create environment**. It will take a few minutes for your Cloud9 environment to be ready.
 
 ## Installations 
 *This application deployment requires a few dependencies.*
 
-- [NodeJS](https://nodejs.org/en/download/) - You will need to install Node.js and NPM on your local machine to run the final application locally. 
+- [NodeJS](https://nodejs.org/en/download/) - You will need to install Node.js and NPM **on your local machine** to run the final application locally. You can do this while waiting for your Cloud9 environment to be ready.
     - For **Windows** machines, please follow the instructions at https://phoenixnap.com/kb/install-node-js-npm-on-windows
     - For **Mac** machines you will install NVM, a version manager for Node.js that allows you to quickly change and manage different Node.js versions on the same machine
         1. Follow steps found here: https://github.com/nvm-sh/nvm#install--update-script
@@ -94,14 +94,14 @@ The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS 
 
 *Next we are going to clone the repo and start our virtual environment*
 
-1. Clone the repo from github
+1. Clone the repo from GitHub (**Note: you will check out a specific branch a specified by your table instructor)
     ```
     git clone https://github.com/awstomburge/hlc302-cdk.git
+    cd hlc302-cdk
     git checkout -b <BranchNameGivenByInstructor>
     ```
 2. Create and activate a virtual environment for python
     ```
-    cd hlc302-cdk
     python -m venv hlc302
     source hlc302/bin/activate
     ```
