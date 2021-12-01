@@ -66,7 +66,7 @@ The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS 
 ## Installations 
 *This application requires a few installations we will need the following packages installed.*
 
-- [NodeJS](https://nodejs.org/en/download/)
+- [NodeJS](https://nodejs.org/en/download/) - You will need to install Node.js and NPM on your local machines to run the final application locally. For Windows machines, please follow the instructions at https://phoenixnap.com/kb/install-node-js-npm-on-windows
 - [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_install)
 - [Python <=3.7](https://www.python.org/downloads/release/python-3614/)
 
