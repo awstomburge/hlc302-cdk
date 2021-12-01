@@ -90,6 +90,7 @@ The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS 
 1. Clone the repo from github
     ```
     git clone https://github.com/awstomburge/hlc302-cdk.git
+    git checkout -b <BranchNameGivenByInstructor>
     ```
 2. Create and activate a virtual environment for python
     ```
