@@ -64,15 +64,22 @@ The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS 
 8. Click **Create environment**
 
 ## Installations 
-*This application requires a few installations we will need the following packages installed.*
+*This application deployment requires a few dependencies.*
 
-- [NodeJS](https://nodejs.org/en/download/) - You will need to install Node.js and NPM on your local machines to run the final application locally. For Windows machines, please follow the instructions at https://phoenixnap.com/kb/install-node-js-npm-on-windows
+- [NodeJS](https://nodejs.org/en/download/) - You will need to install Node.js and NPM on your local machine to run the final application locally. 
+    - For **Windows** machines, please follow the instructions at https://phoenixnap.com/kb/install-node-js-npm-on-windows
+    - For **Mac** machines you will install NVM, a version manager for Node.js that allows you to quickly change and manage different Node.js versions on the same machine
+        1. Follow steps found here: https://github.com/nvm-sh/nvm#install--update-script
+        2. Verify it worked: `nvm list`
+        3. Install Node.js version 16: `nvm install 16 --lts`
+
+
 - [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html#getting_started_install)
-- [Python <=3.7](https://www.python.org/downloads/release/python-3614/)
+- [Python >=3.7](https://www.python.org/downloads/release/python-3614/)
 
-*Since we are using Cloud9 today the AWS CLI and Python is already taken care of for us, so we will just have to install [NodeJS] and the [aws-cdk].*
+*Since we are using Cloud9 today the AWS CLI and Python is already taken care of for us, so we will just have to install Node.js and the aws-cdk.*
 
-1. Once the IDE loads in the terminal on the bottom of the screen run the following commands to install the correct version of [NodeJS] and the [aws-cdk]
+1. Once the Cloud9 IDE loads the terminal on the bottom of the screen, run the following commands to install the correct version of Node.js and the aws-cdk:
     
     ![Amazon Cloud9 IDE](images/cloud9-ide.PNG)
     
@@ -85,7 +92,7 @@ The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS 
     ```
 ## Deploying the Infrastructure 
 
-*Next we are going to clone the repo and start out virtual environment*
+*Next we are going to clone the repo and start our virtual environment*
 
 1. Clone the repo from github
     ```
@@ -109,17 +116,17 @@ The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS 
 
 *Now we can deploy the CDK templates to create the infrastructure*
 
-4. Since we’ve never deployed the AWS CDK in this account before we must bootstrap it first and then we can deploy it
+4. Since we’ve never deployed the AWS CDK in this account before we must bootstrap it first and then we will deploy it:
     ```
     cdk bootstrap
     cdk deploy --all --require-approval never -O frontend-agent/src/cdk-outputs.json
     ```
-5. Now we can exit out of the virtual environment
+5. Now we can exit out of the virtual environment:
     ```
     deactivate
     ```
 ## Post Deployment
-*Once the deploy completes, follow the steps below.*
+*Once the deploy completes, follow the steps below:
 
 1. Navigate to **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*.
 2. From the left navigation, click on **Contact Flows**. ![image](https://user-images.githubusercontent.com/79946101/143132591-57fbae6b-0acd-478c-8b80-849ec88bb3dc.png)
