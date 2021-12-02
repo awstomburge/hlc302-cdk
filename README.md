@@ -5,7 +5,11 @@ In this session, you will learn how to deploy a Telehealth solution that allows 
 
 The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS Lambda with automated deployment using Cloudformation via AWS Cloud Development Kit (CDK) via AWS Cloud9 IDE.
 
-** **Warning: Adopting this solution does not make the deployment HIPAA compliant. This solution is a proof of concept and not production ready intended to illustrate tools and services that customers can use as a guidance to build a similar solution on AWS. For more information about HIPAA Compliance on AWS [click here](https://aws.amazon.com/compliance/hipaa-compliance/).** **
+** **Warning: Adopting this solution does not make the deployment HIPAA compliant. This solution is a proof of concept and not production ready intended to illustrate tools and services that customers can use as a guidance to build a similar solution on AWS. For more information about HIPAA Compliance on AWS [click here](https://aws.amazon.com/compliance/hipaa-compliance/).** **  
+
+Event Hash: c546-113af49614-10  
+  
+Event Engine Link: https://dashboard.eventengine.run
 
 ## Architecture
 
