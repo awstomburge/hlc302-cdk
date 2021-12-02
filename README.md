@@ -132,7 +132,7 @@ The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS 
 1. Navigate to **Amazon Connect** in the AWS Console. Click on the **Instance alias** for your instance. It will start with *reinvent2021*.
 2. From the left navigation, click on **Contact Flows**. ![image](https://user-images.githubusercontent.com/79946101/143132591-57fbae6b-0acd-478c-8b80-849ec88bb3dc.png)
 Under the **Amazon Lex** section, select the Bot called `StartVideoCall(Classic)` in the **Bot** box.  Click the button that says **+ Add Amazon Lex Bot**. 
-3. From the left navigation, click on **Approved origins**. Click the **Add domain** button, enter `https://localhost:8080`, and click the **Add domain** button to save the change. Click **Add domain** again, and this time enter and `https://localhost:9000`. Your list of domains should now look like this: ![image](images/approved-domains.png)
+3. From the left navigation, click on **Approved origins**. Click the **Add domain** button, enter `https://localhost:8080`, and click the **Add domain** button to save the change. Your list of domains should now look like this: ![image](images/approved-domains.png)
 
 4. In the navigaton pane on the left, click on the **Overview** link and then click on your Amazon Connect **Access URL**. A new window will open, prompting you to sign in to your Amazon Connect Instance. Sign in with these credentials:
     - Username = admin  
