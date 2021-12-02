@@ -119,7 +119,7 @@ The solution is built using Amazon Connect, Amazon Lex, Amazon API Gateway, AWS 
 
 4. Since we’ve never deployed the AWS CDK in this account before we must bootstrap it first and then we will deploy it (*this will take approximately 15 minutes to complete*):
     ```
-    cdk bootstrap
+    cdk bootstrap aws://<YOUR EVENT ENGINE ACCOUNT-NUMBER-1>/us-east-1
     cdk deploy --all --require-approval never -O frontend-agent/src/cdk-outputs.json
     ```
 5. Now we can exit out of the virtual environment:
